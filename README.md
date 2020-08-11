@@ -3,3 +3,8 @@
 
 ## References
 You can contact me if you need the references I used.
+
+## To do
+- Fix calculation of Delta in code
+- Presentation
+- Move 'real_system' to a more suitable place
