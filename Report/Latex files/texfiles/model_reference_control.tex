@@ -27,7 +27,7 @@ $\rho = \begin{bmatrix}
 with $\beta(\Omega)$ being a row vector with $n_\rho$ elements.
 The idea of model reference control, is to get the closed loop system ``as close'' as possible to a user-defined reference system $M(\Omega)$.
 \begin{equation*}
-    M(\Omega) \approx \frac{K(\Omega,\rho) G(\Omega)}{1 + K(\Omega,\rho) G(\Omega)}
+    \frac{K(\Omega,\rho) G(\Omega)}{1 + K(\Omega,\rho) G(\Omega)} \approx M(\Omega)
 \end{equation*}
 $M(\Omega)$ needs to be chosen such that it is a stable causal LTI system. Moreover, $M(\Omega)$ may not be chosen equal to 1. The reason for this is explained further on. This ``closeness'' criterion can be quantified by using the 2-norm of a transfer function.
 \begin{equation}
@@ -176,8 +176,7 @@ with $l_1 \leq N/2$ being a parameter that can be chosen by the user. The idea b
 \begin{equation*}
     \lim_{N,P\rightarrow \infty} J_{N\!P,l_1}(\rho) = J(\rho) \,,\, \text{w.p. } 1
 \end{equation*}
-However, for finite data, it is proven that the estimator is biased \cite[eq. (37)]{Data-driven_model_reference_control}
-The bias is discussed further in section \ref{sec:bias}.
+However, for finite data, it is proven that the estimator is biased \cite[eq. (37)]{Data-driven_model_reference_control}. The bias is discussed further in section \ref{sec:bias}.
 
 \section{Translation to the frequency domain}
 \label{sec:freq_domain_translate}
@@ -363,7 +362,7 @@ The approximate cost function of the signal in the TD $\frac{1}{51^2}\sum_{n=0}^
     \label{fig:parseval_energy}
 \end{figure}
 
-In \cite{Data-driven_model_reference_control}, $l_1$ has a slightly different interpretation. As it can be seen in (\ref{eq:RuWepstau}), the sum goes from $-l_1$ to $l_1$. This is because the sum is taken over the cross-correlation of $u_W$ and $\epsilon$. The cross-correlation is meaningful for both positive and negative indices, which is why the sum also extends into negative values of $\tau$. The impulse response for negative indices is zero for causal systems, which is why the sum starts at $n = 0$ in (\ref{eq:Japprox_impulse_response}).
+In \cite{Data-driven_model_reference_control}, $l_1$ has a slightly different interpretation. As it can be seen in (\ref{eq:JNl1}), the sum goes from $-l_1$ to $l_1$. This is because the sum is taken over the cross-correlation of $u_W$ and $\epsilon$. The cross-correlation is meaningful for both positive and negative indices, which is why the sum also extends into negative values of $\tau$. The impulse response for negative indices is zero for causal systems, which is why the sum starts at $n = 0$ in (\ref{eq:Japprox_impulse_response}).
 
 \newpage
 \section{Bias}
@@ -414,7 +413,7 @@ Thus, the bias can be decreased by only taking the first $l_1+1$  terms in the T
 
 \section{Weighted nonlinear least squares}
 \label{sec:WNLS}
-It is possible to reduce the variability by using a weighted cost function. The weight will be based on the variance of the FRF estimate.
+It is possible to reduce the variability by using a weighted cost function. The weights will be based on the variance of the FRF estimate.
 \begin{align*}
     \sigma^2_{\hat G}(\Omega_k) = \mathbb{E}\big\{|\hat G(\Omega_k)- \mathbb{E}\{\hat G(\Omega_k)\}|^2\big\} 
 \end{align*}
@@ -477,7 +476,7 @@ The user must then also define the reference model $M(\Omega)$ and the controlle
 
 
 \newpage
-\section{Discrete time simulations}
+\section{Discrete-time simulations}
 \label{sec:DT_simulations}
 
 \subsection{Introduction}
@@ -492,7 +491,7 @@ This was done in order to make the cost function convex. Thus we should verify a
 \end{equation*}
 
 \paragraph{System models}
-In order to compare the FD methods to the TD methods, we will initially work with DT systems. 3 DT systems $G(q^{-1})$ will be simulated. The first 2 systems will have a reference model $M(q^{-1})$ that will be realizable by the proposed control structure $K(q^{-1},\rho)$. The third system will have a reference model that cannot be realized by the proposed control structure. The systems, the reference model and the proposed control structure are given in table \ref{tab:simulated_systems}. These are also shown in figure \ref{fig:G_and_M_all}. The systems will start with zero initial conditions.
+In order to compare the FD methods to the TD methods, we will initially work with DT systems. 3 DT systems $G(q^{-1})$ will be simulated. The first 2 systems will have a reference model $M(q^{-1})$ that will be realizable by the proposed control structure $K(q^{-1},\rho)$. The third system will have a reference model that cannot be realized by the proposed control structure. The systems, the reference models and the proposed controller structures are given in table \ref{tab:simulated_systems}. These are also shown in figure \ref{fig:G_and_M_all}. The systems will start with zero initial conditions.
 
 \begin{table}[H]
 \centering
@@ -698,7 +697,7 @@ with $E(k)$ being the DFT of $e(n)$ and $I_E(\Omega_k)$ being a polynomial in $\
 
 \newpage
 \paragraph{TD vs. FD vs. WNLS}
-Let's now compare the TD, FD and WNLS methods. For the FD method, the transient can be either suppressed or not taken into account. The WNLS method also uses a nonparametric estimate of the FRF, so here the transient can also be suppressed or not taken into account. Additionally, this optimization needs an initial estimate. As we are working in simulation, the actual parameters $\rho$ that minimize the convex cost function are known. If these parameters are used as initial estimate, we refer to this optimization as ``actual init''. If the estimate of the controller parameters obtained by optimizing using the FD method with $l_1 = 254$ are used as initial estimate, then we refer to this optimization as ``LS init''. The reason for referring to this initial estimate as ``LS init'' is because it is obtained by minimizing the numerator of (\ref{eq:JWNLS}), which is equivalent to minimizing (\ref{eq:JFD}). The numerator of (\ref{eq:JWNLS}) is the sum of squares, which is why the result of this optimization is referred to as the least squares (LS) solution. Table \ref{tab:simple_white_transient_with_without_TD_vs_FD_vs_WNLS} compares the mean cost function of all the methods on the simple system with white additive noise. For the first 3 rows, the parameter $l_1$ that performs the best are shown. The FD method with $l_1 = 23$ where the transient is not suppressed performs best. Moreover, the WNLS method achieves exactly the same results when using the ``LS init'' or the ``actual init''. This means that the ``LS init'' is a good initial estimate for the optimization.
+Let's now compare the TD, FD and WNLS methods. For the FD method, the transient can be either suppressed or not taken into account. The WNLS method also uses a nonparametric estimate of the FRF, so here the transient can also be suppressed or not taken into account. Additionally, this optimization needs an initial estimate. As we are working in simulation, the actual parameters $\rho$ that minimize the convex cost function are known. If these parameters are used as initial estimate, we refer to this optimization as ``actual init''. If the estimate of the controller parameters obtained by optimizing using the FD method with $l_1 = 254$ are used as initial estimate, then we refer to this optimization as ``LS init''. The reason for referring to this initial estimate as ``LS init'' is because it is obtained by minimizing the numerator of (\ref{eq:JWNLS}), which is equivalent to minimizing (\ref{eq:JFD}). The numerator of (\ref{eq:JWNLS}) is the sum of squares, which is why the result of this optimization is referred to as the least squares (LS) solution. Table \ref{tab:simple_white_transient_with_without_TD_vs_FD_vs_WNLS} compares the mean cost function of all the methods on the simple system with additive white noise. For the first 3 rows, the parameters $l_1$ that performs the best are shown. The FD method with $l_1 = 23$ where the transient is not suppressed performs best. Moreover, the WNLS method achieves exactly the same results when using the ``LS init'' or the ``actual init''. This means that the ``LS init'' is a good initial estimate for the optimization.
 
 \begin{table}[H]
 \centering
@@ -716,11 +715,11 @@ WNLS transient suppressed (LS init) & -37.96 & -37.96 \\
 WNLS transient suppressed (actual init) & -37.96 & -37.96 \\
 \hline
 \end{tabular}
-\caption{Simple system with white noise. With and without transient suppression for the FD and WNLS methods. For the first 3 rows, the parameter $l_1$ that yielded the best results are displayed.}
+\caption{Simple system with white noise. With and without transient suppression for the FD and WNLS methods. For the first 3 rows, the parameters $l_1$ that yielded the best results are displayed.}
 \label{tab:simple_white_transient_with_without_TD_vs_FD_vs_WNLS}
 \end{table}
 
-Table \ref{tab:simple_white_transient_with_without_TD_vs_FD_vs_WNLS} showed the results for white additive noise. What will happen if the output is perturbed by coloured noise?  The results for this experiment are shown in table \ref{tab:simple_coloured_transient_with_without_TD_vs_FD_vs_WNLS}. The TD method now performs better than the FD method. However, the WNLS method outperforms the other methods in this case by a large margin. Additionally, even though the WNLS method without transient suppression is better than the other methods, the WNLS method with transient suppression gives a very large improvement. Also, using the ``LS init'' yields exactly the same result as using the ``actual init''.
+Table \ref{tab:simple_white_transient_with_without_TD_vs_FD_vs_WNLS} showed the results for additive white noise. What will happen if the output is perturbed by coloured noise?  The results for this experiment are shown in table \ref{tab:simple_coloured_transient_with_without_TD_vs_FD_vs_WNLS}. The TD method now performs better than the FD method. However, the WNLS method outperforms the other methods in this case by a large margin. Additionally, even though the WNLS method without transient suppression is better than the other methods, the WNLS method with transient suppression gives a very large improvement. Also, using the ``LS init'' yields exactly the same result as using the ``actual init''.
 
 \begin{table}[H]
 \centering
@@ -738,10 +737,11 @@ WNLS transient suppressed (LS init) & \textbf{-69.64} & \textbf{-69.64} \\
 WNLS transient suppressed (actual init) & \textbf{-69.64} & \textbf{-69.64} \\
 \hline
 \end{tabular}
-\caption{Simple system with coloured noise. With and without transient suppression for the FD and WNLS methods. For the first 3 rows, the parameter $l_1$ that yielded the best results are displayed.}
+\caption{Simple system with coloured noise. With and without transient suppression for the FD and WNLS methods. For the first 3 rows, the parameters $l_1$ that yielded the best results are displayed.}
 \label{tab:simple_coloured_transient_with_without_TD_vs_FD_vs_WNLS}
 \end{table}
 
+\newpage
 The reason why the WNLS method works better for coloured noise than for white noise is that the FRF estimate at all bins are equally noisy when the output is perturbed by white noise. Thus, using a weighting doesn't improve the quality of the controller. However, if the noise is highly coloured, the WNLS method will be more inclined to use the frequency bins where the noise is low to design a controller.
 
 \subsection{Long transient system}
@@ -770,7 +770,7 @@ WNLS transient suppressed (LS init) & \textbf{-59.10} & \textbf{-59.11} \\
 WNLS transient suppressed (actual init) & \textbf{-59.10} & \textbf{-59.11} \\
 \hline
 \end{tabular}
-\caption{Long transient system with white noise. With and without transient suppression for the FD and WNLS methods. For the first, third and fifth rows, the parameter $l_1$ that yielded the best results are displayed.}
+\caption{Long transient system with white noise. With and without transient suppression for the FD and WNLS methods. For the first, third and fifth rows, the parameters $l_1$ that yielded the best results are displayed.}
 \label{tab:long_transient_white_transient_with_without_TD_vs_FD_vs_WNLS}
 \end{table}
 
@@ -781,8 +781,7 @@ WNLS transient suppressed (actual init) & \textbf{-59.10} & \textbf{-59.11} \\
 \label{fig:impulse_simple_long}
 \end{figure}
 
-The same experiment can be repeated with coloured noise. The summary of the results is shown in table \ref{tab:long_transient_coloured_transient_with_without_TD_vs_FD_vs_WNLS}
-. The same conclusion taken for white noise can be applied here. One difference is that in this case, all the 100 optimizations failed for the WNLS method where the transient is not suppressed with ``LS init'' as initial estimate.
+The same experiment can be repeated with coloured noise. The summary of the results is shown in table \ref{tab:long_transient_coloured_transient_with_without_TD_vs_FD_vs_WNLS}. The same conclusions taken for the results of table \ref{tab:long_transient_white_transient_with_without_TD_vs_FD_vs_WNLS} can be applied here. One difference is that in this case, all the 100 optimizations failed for the WNLS method where the transient is not suppressed with ``LS init'' as initial estimate.
 \begin{table}[H]
 \centering
 \begin{tabular}{|ccc|}
@@ -802,7 +801,7 @@ WNLS transient suppressed (LS init) & \textbf{-82.73} & \textbf{-82.73} \\
 WNLS transient suppressed (actual init) & \textbf{-82.73} & \textbf{-82.73} \\
 \hline
 \end{tabular}
-\caption{Long transient system with coloured noise. With and without transient suppression for the FD and WNLS methods. For the first, third and fifth rows, the parameter $l_1$ that yielded the best results are displayed.}
+\caption{Long transient system with coloured noise. With and without transient suppression for the FD and WNLS methods. For the first, third and fifth rows, the parameters $l_1$ that yielded the best results are displayed.}
 \label{tab:long_transient_coloured_transient_with_without_TD_vs_FD_vs_WNLS}
 \end{table}
 
@@ -845,7 +844,7 @@ WNLS transient suppressed (actual init)     & \textcolor{red}{-30.96 [2 failed]}
 
 \hline
 \end{tabular}
-\caption{System with non realizable controller with white noise. With and without transient suppression for the FD and WNLS methods. For the second, fourth and sixth rows, the parameter $l_1$ that yielded the best results are displayed.}
+\caption{System with non realizable controller with white noise. With and without transient suppression for the FD and WNLS methods. For the second, fourth and sixth rows, the parameters $l_1$ that yielded the best results are displayed.}
 \label{tab:non_realizable_white_transient_with_without_TD_vs_FD_vs_WNLS}
 \end{table}
 
@@ -873,7 +872,7 @@ WNLS transient suppressed (LS init)         & \textcolor{red}{-29.85 [32 failed]
 WNLS transient suppressed (actual init)     & \textcolor{red}{-29.72 [25 failed]}       & \textcolor{red}{-29.66 [25 failed]}       \\
 \hline
 \end{tabular}
-\caption{System with non realizable controller with coloured noise. With and without transient suppression for the FD and WNLS methods. For the second, fourth and sixth rows, the parameter $l_1$ that yielded the best results are displayed.}
+\caption{System with non realizable controller with coloured noise. With and without transient suppression for the FD and WNLS methods. For the second, fourth and sixth rows, the parameters $l_1$ that yielded the best results are displayed.}
 \label{tab:non_realizable_coloured_transient_with_without_TD_vs_FD_vs_WNLS}
 \end{table}
 

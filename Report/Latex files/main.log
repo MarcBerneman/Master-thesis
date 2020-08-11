@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.6.19)  10 AUG 2020 23:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.6.19)  11 AUG 2020 12:39
 entering extended mode
 **./main.tex
 (main.tex
@@ -1158,20 +1158,7 @@ File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Program Files\MiKTeX 2.9\tex/generic/pgf/frontendlayer/tikz/libraries\tikz
 librarytopaths.code.tex"
 File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)))
-
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 43.
-
-
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 45.
-
-
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 47.
-
-(glossary.tex)
+))) (glossary.tex)
 \glswrite=\write6
 \glo@main@file=\write7
 \openout7 = `main.glo'.
@@ -1185,7 +1172,8 @@ Package glossaries Info: Writing glossary file main.acn on input line 124.
 \openout9 = `main.sbl'.
 
 Package glossaries Info: Writing glossary file main.sbl on input line 124.
- ("C:\Program Files\MiKTeX 2.9\tex/latex/todonotes\todonotes.sty"
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/todonotes\todonotes.sty"
 Package: todonotes 2019/01/24 v1.1.2 Todonotes source and documentation.
 Package: todonotes 2018/11/22
 
@@ -1275,21 +1263,21 @@ ABD: EveryShipout initializing macros
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(85.35826pt, 426.79135pt, 85.35826pt)
+* modes: twoside 
+* h-part:(L,W,R)=(99.58464pt, 426.79135pt, 71.13188pt)
 * v-part:(T,H,B)=(71.13188pt, 709.89627pt, 64.01869pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=426.79135pt
 * \textheight=709.89627pt
-* \oddsidemargin=13.08827pt
-* \evensidemargin=13.08827pt
+* \oddsidemargin=27.31465pt
+* \evensidemargin=-1.1381pt
 * \topmargin=-40.1381pt
 * \headheight=14.0pt
 * \headsep=25.0pt
 * \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=59.0pt
+* \marginparwidth=113.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.0pt plus 4.0pt minus 2.0pt
@@ -1297,8 +1285,8 @@ ABD: EveryShipout initializing macros
 * \voffset=0.0pt
 * \mag=1000
 * \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
+* \@twosidetrue
+* \@mparswitchtrue
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
@@ -1366,7 +1354,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
+* modes: twoside 
 * h-part:(L,W,R)=(28.45274pt, 517.84009pt, 51.21504pt)
 * v-part:(T,H,B)=(28.45274pt, 788.14136pt, 28.45274pt)
 * \paperwidth=597.50787pt
@@ -1374,13 +1362,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 * \textwidth=517.84009pt
 * \textheight=788.14136pt
 * \oddsidemargin=-43.81725pt
-* \evensidemargin=-43.81725pt
+* \evensidemargin=-21.05495pt
 * \topmargin=-82.81725pt
 * \headheight=14.0pt
 * \headsep=25.0pt
 * \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=59.0pt
+* \marginparwidth=113.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.0pt plus 4.0pt minus 2.0pt
@@ -1388,8 +1376,8 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 * \voffset=0.0pt
 * \mag=1000
 * \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
+* \@twosidetrue
+* \@mparswitchtrue
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
@@ -1460,12 +1448,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--22
 
  []
 
-)pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
- been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.152 \clearpage
-                 [1
+) [2
 
 ] (texfiles/acknowledgements.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--2
@@ -1496,7 +1479,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--11
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
+* modes: twoside 
 * h-part:(L,W,R)=(85.35826pt, 426.79135pt, 85.35826pt)
 * v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
 * \paperwidth=597.50787pt
@@ -1510,7 +1493,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--11
 * \headsep=25.0pt
 * \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=59.0pt
+* \marginparwidth=113.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.0pt plus 4.0pt minus 2.0pt
@@ -1518,8 +1501,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--11
 * \voffset=0.0pt
 * \mag=1000
 * \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
+* \@twosidetrue
+* \@mparswitchtrue
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
@@ -1554,7 +1537,7 @@ Overfull \hbox (64.75838pt too wide) in alignment at lines 58--58
 ]
 Chapter 1.
 (texfiles/introduction.tex
-<figures/data-driven_vs_tradition.pdf, id=503, 406.3983pt x 207.65579pt>
+<figures/data-driven_vs_tradition.pdf, id=504, 406.3983pt x 207.65579pt>
 File: figures/data-driven_vs_tradition.pdf Graphic file (type pdf)
 <use figures/data-driven_vs_tradition.pdf>
 Package pdftex.def Info: figures/data-driven_vs_tradition.pdf  used on input li
@@ -1574,16 +1557,19 @@ lusion: invalid other resource which is no dict (key 'ProcSets', type <array>);
  ignored.
 >]
 Chapter 2.
-(texfiles/preliminaries.tex [2
+(texfiles/preliminaries.texpdfTeX warning (ext4): destination with the same ide
+ntifier (name{page.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.36 \newpage
+              [2
 
 ]
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 7
 2.
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/doublestroke\udsrom.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex/latex/doublestroke\udsrom.fd"
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-) [3] [4]
-[5]
+) [3] [4] [5]
 Package epstopdf Info: Source file: <figures/MS_u0_u.eps>
 (epstopdf)                    date: 2020-06-19 17:52:29
 (epstopdf)                    size: 42748 bytes
@@ -1665,8 +1651,11 @@ File: figures/MS_G-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/MS_G-eps-converted-to.pdf  used on input line 
 220.
 (pdftex.def)             Requested size: 277.41176pt x 241.5805pt.
-[7 <./figures/MS_u-eps-converted-to.pdf> <./figures/MS_y-eps-converted-to.pdf>]
-[8 <./figures/MS_G-eps-converted-to.pdf>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7 <./figures/MS_u-eps-converted-to.pdf> <./figures/MS_y-eps-converted-to.pdf>
+] [8 <./figures/MS_G-eps-converted-to.pdf>]
 <figures/ZOH_setup.png, id=624, 652.68843pt x 315.42844pt>
 File: figures/ZOH_setup.png Graphic file (type png)
 <use figures/ZOH_setup.png>
@@ -1698,6 +1687,9 @@ File: figures/BL_setup.png Graphic file (type png)
 <use figures/BL_setup.png>
 Package pdftex.def Info: figures/BL_setup.png  used on input line 272.
 (pdftex.def)             Requested size: 277.41176pt x 143.05603pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [10 <./figures/ZOH-eps-converted-to.pdf> <./figures/BL_setup.png>]
 Package epstopdf Info: Source file: <figures/MS_transients_RMS_error.eps>
 (epstopdf)                    date: 2020-06-19 17:52:47
@@ -1904,7 +1896,7 @@ df>
 (epstopdf)                    size: 9737 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/parseval_signal-eps
 -converted-to.pdf figures/parseval_signal.eps>
-(epstopdf)             \includegraphics on input line 352.
+(epstopdf)             \includegraphics on input line 351.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -1915,7 +1907,7 @@ t>
 File: figures/parseval_signal-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/parseval_signal-eps-converted-to.pdf>
 Package pdftex.def Info: figures/parseval_signal-eps-converted-to.pdf  used on 
-input line 352.
+input line 351.
 (pdftex.def)             Requested size: 277.41176pt x 235.62183pt.
 [38 <./figures/parseval_signal-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/parseval_energy.eps>
@@ -1927,7 +1919,7 @@ df>
 (epstopdf)                    size: 10052 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/parseval_energy-eps
 -converted-to.pdf figures/parseval_energy.eps>
-(epstopdf)             \includegraphics on input line 361.
+(epstopdf)             \includegraphics on input line 360.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -1938,13 +1930,13 @@ pt>
 File: figures/parseval_energy-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/parseval_energy-eps-converted-to.pdf>
 Package pdftex.def Info: figures/parseval_energy-eps-converted-to.pdf  used on 
-input line 361.
+input line 360.
 (pdftex.def)             Requested size: 277.41176pt x 205.86732pt.
 [39 <./figures/parseval_energy-eps-converted-to.pdf>] [40] [41]
 <figures/flowchart.pdf, id=1135, 449.76028pt x 269.08528pt>
 File: figures/flowchart.pdf Graphic file (type pdf)
 <use figures/flowchart.pdf>
-Package pdftex.def Info: figures/flowchart.pdf  used on input line 473.
+Package pdftex.def Info: figures/flowchart.pdf  used on input line 472.
 (pdftex.def)             Requested size: 320.0935pt x 191.50764pt.
  [42 <./figures/flowchart.pdf>]
 Package epstopdf Info: Source file: <figures/G_and_M_simple.eps>
@@ -1956,7 +1948,7 @@ f>
 (epstopdf)                    size: 10117 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/G_and_M_simple-eps-
 converted-to.pdf figures/G_and_M_simple.eps>
-(epstopdf)             \includegraphics on input line 537.
+(epstopdf)             \includegraphics on input line 536.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -1967,7 +1959,7 @@ PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: figures/G_and_M_simple-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/G_and_M_simple-eps-converted-to.pdf>
 Package pdftex.def Info: figures/G_and_M_simple-eps-converted-to.pdf  used on i
-nput line 537.
+nput line 536.
 (pdftex.def)             Requested size: 140.84192pt x 117.5603pt.
 Package epstopdf Info: Source file: <figures/G_and_M_long_transient.eps>
 (epstopdf)                    date: 2020-07-14 18:13:25
@@ -1978,7 +1970,7 @@ ed-to.pdf>
 (epstopdf)                    size: 10297 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/G_and_M_long_transi
 ent-eps-converted-to.pdf figures/G_and_M_long_transient.eps>
-(epstopdf)             \includegraphics on input line 541.
+(epstopdf)             \includegraphics on input line 540.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -1991,7 +1983,7 @@ File: figures/G_and_M_long_transient-eps-converted-to.pdf Graphic file (type pd
 f)
 <use figures/G_and_M_long_transient-eps-converted-to.pdf>
 Package pdftex.def Info: figures/G_and_M_long_transient-eps-converted-to.pdf  u
-sed on input line 541.
+sed on input line 540.
 (pdftex.def)             Requested size: 140.84192pt x 117.5603pt.
 Package epstopdf Info: Source file: <figures/G_and_M_undermodeled.eps>
 (epstopdf)                    date: 2020-07-14 18:13:28
@@ -2002,7 +1994,7 @@ Package epstopdf Info: Source file: <figures/G_and_M_undermodeled.eps>
 (epstopdf)                    size: 10142 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/G_and_M_undermodele
 d-eps-converted-to.pdf figures/G_and_M_undermodeled.eps>
-(epstopdf)             \includegraphics on input line 545.
+(epstopdf)             \includegraphics on input line 544.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -2015,9 +2007,12 @@ File: figures/G_and_M_undermodeled-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/G_and_M_undermodeled-eps-converted-to.pdf>
 Package pdftex.def Info: figures/G_and_M_undermodeled-eps-converted-to.pdf  use
-d on input line 545.
+d on input line 544.
 (pdftex.def)             Requested size: 140.84192pt x 117.5603pt.
-[43]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [43]
 Package epstopdf Info: Source file: <figures/noise_models.eps>
 (epstopdf)                    date: 2020-07-14 18:19:10
 (epstopdf)                    size: 19592 bytes
@@ -2027,7 +2022,7 @@ Package epstopdf Info: Source file: <figures/noise_models.eps>
 (epstopdf)                    size: 9665 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/noise_models-eps-co
 nverted-to.pdf figures/noise_models.eps>
-(epstopdf)             \includegraphics on input line 567.
+(epstopdf)             \includegraphics on input line 566.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -2037,7 +2032,7 @@ F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: figures/noise_models-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/noise_models-eps-converted-to.pdf>
 Package pdftex.def Info: figures/noise_models-eps-converted-to.pdf  used on inp
-ut line 567.
+ut line 566.
 (pdftex.def)             Requested size: 256.07741pt x 220.51384pt.
 [44 <./figures/G_and_M_simple-eps-converted-to.pdf> <./figures/G_and_M_long_tra
 nsient-eps-converted-to.pdf> <./figures/G_and_M_undermodeled-eps-converted-to.p
@@ -2051,7 +2046,7 @@ Package epstopdf Info: Source file: <figures/CL_FD_simple_flat.eps>
 (epstopdf)                    size: 13163 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/CL_FD_simple_flat-e
 ps-converted-to.pdf figures/CL_FD_simple_flat.eps>
-(epstopdf)             \includegraphics on input line 622.
+(epstopdf)             \includegraphics on input line 621.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -2062,7 +2057,7 @@ t>
 File: figures/CL_FD_simple_flat-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/CL_FD_simple_flat-eps-converted-to.pdf>
 Package pdftex.def Info: figures/CL_FD_simple_flat-eps-converted-to.pdf  used o
-n input line 622.
+n input line 621.
 (pdftex.def)             Requested size: 256.07741pt x 153.98317pt.
 [47 <./figures/CL_FD_simple_flat-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/mean_cost_function_TD_simple_flat.
@@ -2076,7 +2071,7 @@ eps-converted-to.pdf>
 (epstopdf)             Command: <epstopdf --outfile=figures/mean_cost_function_
 TD_simple_flat-eps-converted-to.pdf figures/mean_cost_function_TD_simple_flat.e
 ps>
-(epstopdf)             \includegraphics on input line 633.
+(epstopdf)             \includegraphics on input line 632.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -2089,7 +2084,7 @@ File: figures/mean_cost_function_TD_simple_flat-eps-converted-to.pdf Graphic fi
 le (type pdf)
 <use figures/mean_cost_function_TD_simple_flat-eps-converted-to.pdf>
 Package pdftex.def Info: figures/mean_cost_function_TD_simple_flat-eps-converte
-d-to.pdf  used on input line 633.
+d-to.pdf  used on input line 632.
 (pdftex.def)             Requested size: 256.07741pt x 119.83206pt.
 Package epstopdf Info: Source file: <figures/mean_cost_function_FD_simple_flat.
 eps>
@@ -2102,7 +2097,7 @@ eps-converted-to.pdf>
 (epstopdf)             Command: <epstopdf --outfile=figures/mean_cost_function_
 FD_simple_flat-eps-converted-to.pdf figures/mean_cost_function_FD_simple_flat.e
 ps>
-(epstopdf)             \includegraphics on input line 638.
+(epstopdf)             \includegraphics on input line 637.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -2115,7 +2110,7 @@ File: figures/mean_cost_function_FD_simple_flat-eps-converted-to.pdf Graphic fi
 le (type pdf)
 <use figures/mean_cost_function_FD_simple_flat-eps-converted-to.pdf>
 Package pdftex.def Info: figures/mean_cost_function_FD_simple_flat-eps-converte
-d-to.pdf  used on input line 638.
+d-to.pdf  used on input line 637.
 (pdftex.def)             Requested size: 256.07741pt x 119.83206pt.
 [48 <./figures/mean_cost_function_TD_simple_flat-eps-converted-to.pdf> <./figur
 es/mean_cost_function_FD_simple_flat-eps-converted-to.pdf>]
@@ -2128,7 +2123,7 @@ rted-to.pdf>
 (epstopdf)                    size: 11740 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/MSE_Gest_simple_col
 oured-eps-converted-to.pdf figures/MSE_Gest_simple_coloured.eps>
-(epstopdf)             \includegraphics on input line 694.
+(epstopdf)             \includegraphics on input line 693.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -2141,7 +2136,7 @@ File: figures/MSE_Gest_simple_coloured-eps-converted-to.pdf Graphic file (type
 pdf)
 <use figures/MSE_Gest_simple_coloured-eps-converted-to.pdf>
 Package pdftex.def Info: figures/MSE_Gest_simple_coloured-eps-converted-to.pdf 
- used on input line 694.
+ used on input line 693.
 (pdftex.def)             Requested size: 256.07741pt x 169.3067pt.
 [49 <./figures/MSE_Gest_simple_coloured-eps-converted-to.pdf>] [50]
 Package epstopdf Info: Source file: <figures/impulse_response_simple_long.eps>
@@ -2168,7 +2163,11 @@ ype pdf)
 Package pdftex.def Info: figures/impulse_response_simple_long-eps-converted-to.
 pdf  used on input line 779.
 (pdftex.def)             Requested size: 256.07741pt x 212.02934pt.
-[51] [52 <./figures/impulse_response_simple_long-eps-converted-to.pdf>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [51]
+[52 <./figures/impulse_response_simple_long-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/undermodeled_optimal.eps>
 (epstopdf)                    date: 2020-08-01 10:39:20
 (epstopdf)                    size: 19896 bytes
@@ -2178,26 +2177,26 @@ Package epstopdf Info: Source file: <figures/undermodeled_optimal.eps>
 (epstopdf)                    size: 10112 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/undermodeled_optima
 l-eps-converted-to.pdf figures/undermodeled_optimal.eps>
-(epstopdf)             \includegraphics on input line 818.
+(epstopdf)             \includegraphics on input line 817.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./figures/undermodeled_optimal-eps-converted-to.
 pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 
-<figures/undermodeled_optimal-eps-converted-to.pdf, id=1344, 370.38374pt x 309.
+<figures/undermodeled_optimal-eps-converted-to.pdf, id=1345, 370.38374pt x 309.
 155pt>
 File: figures/undermodeled_optimal-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/undermodeled_optimal-eps-converted-to.pdf>
 Package pdftex.def Info: figures/undermodeled_optimal-eps-converted-to.pdf  use
-d on input line 818.
+d on input line 817.
 (pdftex.def)             Requested size: 256.07741pt x 213.74644pt.
 [53 <./figures/undermodeled_optimal-eps-converted-to.pdf>] [54] [55]) [56]
 (texfiles/appendices2.tex [57
 
 ] [58]
-<figures/unstable_system.pdf, id=1398, 536.0025pt x 168.63pt>
+<figures/unstable_system.pdf, id=1399, 536.0025pt x 168.63pt>
 File: figures/unstable_system.pdf Graphic file (type pdf)
 <use figures/unstable_system.pdf>
 Package pdftex.def Info: figures/unstable_system.pdf  used on input line 61.
@@ -2210,7 +2209,7 @@ nvalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]) [60]
 Chapter 4.
 (texfiles/guaranteed_stability.tex
-<figures/interconnection.pdf, id=1461, 353.40028pt x 148.6353pt>
+<figures/interconnection.pdf, id=1462, 353.40028pt x 148.6353pt>
 File: figures/interconnection.pdf Graphic file (type pdf)
 <use figures/interconnection.pdf>
 Package pdftex.def Info: figures/interconnection.pdf  used on input line 10.
@@ -2219,17 +2218,17 @@ Package pdftex.def Info: figures/interconnection.pdf  used on input line 10.
 
  <./figures/interconnection.pdf>]
 [62]
-<figures/small_gain_CL1.pdf, id=1496, 562.01968pt x 133.45859pt>
+<figures/small_gain_CL1.pdf, id=1497, 562.01968pt x 133.45859pt>
 File: figures/small_gain_CL1.pdf Graphic file (type pdf)
 <use figures/small_gain_CL1.pdf>
 Package pdftex.def Info: figures/small_gain_CL1.pdf  used on input line 86.
 (pdftex.def)             Requested size: 337.21442pt x 80.07576pt.
-<figures/small_gain_CL2.pdf, id=1500, 562.01968pt x 133.45859pt>
+<figures/small_gain_CL2.pdf, id=1501, 562.01968pt x 133.45859pt>
 File: figures/small_gain_CL2.pdf Graphic file (type pdf)
 <use figures/small_gain_CL2.pdf>
 Package pdftex.def Info: figures/small_gain_CL2.pdf  used on input line 95.
 (pdftex.def)             Requested size: 337.21442pt x 80.07576pt.
-<figures/small_gain_CL3.pdf, id=1504, 589.24138pt x 207.65579pt>
+<figures/small_gain_CL3.pdf, id=1505, 589.24138pt x 207.65579pt>
 File: figures/small_gain_CL3.pdf Graphic file (type pdf)
 <use figures/small_gain_CL3.pdf>
 Package pdftex.def Info: figures/small_gain_CL3.pdf  used on input line 103.
@@ -2238,12 +2237,12 @@ Package pdftex.def Info: figures/small_gain_CL3.pdf  used on input line 103.
 mall_gain_CL3.pdf>]) [64]
 Chapter 5.
 (texfiles/real_experiment.tex
-<figures/DUT.jpg, id=1563, 2457.18pt x 1842.885pt>
+<figures/DUT.jpg, id=1564, 2457.18pt x 1842.885pt>
 File: figures/DUT.jpg Graphic file (type jpg)
 <use figures/DUT.jpg>
 Package pdftex.def Info: figures/DUT.jpg  used on input line 7.
 (pdftex.def)             Requested size: 213.39568pt x 160.03163pt.
-<figures/DUT_setup.png, id=1566, 444.66125pt x 262.9825pt>
+<figures/DUT_setup.png, id=1567, 444.66125pt x 262.9825pt>
 File: figures/DUT_setup.png Graphic file (type png)
 <use figures/DUT_setup.png>
 Package pdftex.def Info: figures/DUT_setup.png  used on input line 17.
@@ -2272,7 +2271,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex (file ./figures/robust_method_G-eps-converted-to.pdf):
  PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/robust_method_G-eps-converted-to.pdf, id=1584, 412.54124pt x 311.1625p
+<figures/robust_method_G-eps-converted-to.pdf, id=1585, 412.54124pt x 311.1625p
 t>
 File: figures/robust_method_G-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/robust_method_G-eps-converted-to.pdf>
@@ -2298,7 +2297,7 @@ Package epstopdf Info: Output file is already uptodate.
 pdfTeX warning: pdflatex (file ./figures/real_system_nonparametric_closed_loop-
 eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most vers
 ion <1.5> allowed
-<figures/real_system_nonparametric_closed_loop-eps-converted-to.pdf, id=1601, 3
+<figures/real_system_nonparametric_closed_loop-eps-converted-to.pdf, id=1602, 3
 78.41376pt x 298.11375pt>
 File: figures/real_system_nonparametric_closed_loop-eps-converted-to.pdf Graphi
 c file (type pdf)
@@ -2306,7 +2305,10 @@ c file (type pdf)
 Package pdftex.def Info: figures/real_system_nonparametric_closed_loop-eps-conv
 erted-to.pdf  used on input line 124.
 (pdftex.def)             Requested size: 277.41176pt x 218.54465pt.
-[68]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [68]
 Package epstopdf Info: Source file: <figures/M_one_minus_M_poles.eps>
 (epstopdf)                    date: 2020-08-03 20:05:42
 (epstopdf)                    size: 18796 bytes
@@ -2322,16 +2324,19 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex (file ./figures/M_one_minus_M_poles-eps-converted-to.p
 df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/M_one_minus_M_poles-eps-converted-to.pdf, id=1610, 375.4025pt x 311.16
+<figures/M_one_minus_M_poles-eps-converted-to.pdf, id=1611, 375.4025pt x 311.16
 25pt>
 File: figures/M_one_minus_M_poles-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/M_one_minus_M_poles-eps-converted-to.pdf>
 Package pdftex.def Info: figures/M_one_minus_M_poles-eps-converted-to.pdf  used
  on input line 133.
 (pdftex.def)             Requested size: 277.41176pt x 229.95277pt.
-[69 <./figures/real_system_nonparametric_closed_loop-eps-converted-to.pdf> <./f
-igures/M_one_minus_M_poles-eps-converted-to.pdf>]
-<figures/circuit_annotated.jpg, id=1630, 7702.7775pt x 2878.755pt>
+
+Underfull \vbox (badness 4242) has occurred while \output is active []
+
+ [69 <./figures/real_system_nonparametric_closed_loop-eps-converted-to.pdf> <./
+figures/M_one_minus_M_poles-eps-converted-to.pdf>]
+<figures/circuit_annotated.jpg, id=1631, 7702.7775pt x 2878.755pt>
 File: figures/circuit_annotated.jpg Graphic file (type jpg)
 <use figures/circuit_annotated.jpg>
 Package pdftex.def Info: figures/circuit_annotated.jpg  used on input line 144.
@@ -2363,7 +2368,7 @@ Package epstopdf Info: Output file is already uptodate.
 pdfTeX warning: pdflatex (file ./figures/controller_simulation-eps-converted-to
 .pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
 d
-<figures/controller_simulation-eps-converted-to.pdf, id=1634, 385.44pt x 311.16
+<figures/controller_simulation-eps-converted-to.pdf, id=1635, 385.44pt x 311.16
 25pt>
 File: figures/controller_simulation-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -2373,7 +2378,7 @@ ed on input line 154.
 (pdftex.def)             Requested size: 277.41176pt x 223.95137pt.
 [70 <./figures/controller_simulation-eps-converted-to.pdf>] [71 <./figures/circ
 uit_annotated.jpg>]
-<figures/controller_real.jpg, id=1659, 256.70906pt x 164.86594pt>
+<figures/controller_real.jpg, id=1660, 256.70906pt x 164.86594pt>
 File: figures/controller_real.jpg Graphic file (type jpg)
 <use figures/controller_real.jpg>
 Package pdftex.def Info: figures/controller_real.jpg  used on input line 165.
@@ -2394,7 +2399,7 @@ Package epstopdf Info: Output file is already uptodate.
 pdfTeX warning: pdflatex (file ./figures/controller_input_for_meas-eps-converte
 d-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> al
 lowed
-<figures/controller_input_for_meas-eps-converted-to.pdf, id=1663, 354.32375pt x
+<figures/controller_input_for_meas-eps-converted-to.pdf, id=1664, 354.32375pt x
  311.1625pt>
 File: figures/controller_input_for_meas-eps-converted-to.pdf Graphic file (type
  pdf)
@@ -2419,7 +2424,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex (file ./figures/robust_method_K-eps-converted-to.pdf):
  PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/robust_method_K-eps-converted-to.pdf, id=1680, 407.5225pt x 311.1625pt
+<figures/robust_method_K-eps-converted-to.pdf, id=1681, 407.5225pt x 311.1625pt
 >
 File: figures/robust_method_K-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/robust_method_K-eps-converted-to.pdf>
@@ -2442,7 +2447,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex (file ./figures/robust_method_CL-eps-converted-to.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/robust_method_CL-eps-converted-to.pdf, id=1699, 407.5225pt x 311.1625p
+<figures/robust_method_CL-eps-converted-to.pdf, id=1700, 407.5225pt x 311.1625p
 t>
 File: figures/robust_method_CL-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/robust_method_CL-eps-converted-to.pdf>
@@ -2464,7 +2469,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex (file ./figures/K_from_G_CL-eps-converted-to.pdf): PDF
  inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/K_from_G_CL-eps-converted-to.pdf, id=1714, 386.44376pt x 296.10625pt>
+<figures/K_from_G_CL-eps-converted-to.pdf, id=1715, 386.44376pt x 296.10625pt>
 File: figures/K_from_G_CL-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/K_from_G_CL-eps-converted-to.pdf>
 Package pdftex.def Info: figures/K_from_G_CL-eps-converted-to.pdf  used on inpu
@@ -2499,16 +2504,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 261.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 261.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 261.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C77BD7478A0C21CA4E1FB66B1D777E18;5397.
+(rerunfilecheck)             Checksum: 4A2A450A94E9C11D4D9F7E0919B6E8DE;5397.
  ) 
 Here is how much of TeX's memory you used:
- 38299 strings out of 480799
- 754082 string characters out of 2905531
- 1119186 words of memory out of 3000000
- 53087 multiletter control sequences out of 15000+200000
+ 38302 strings out of 480799
+ 753345 string characters out of 2905531
+ 1119241 words of memory out of 3000000
+ 53089 multiletter control sequences out of 15000+200000
  569078 words of font info for 123 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,17n,100p,1698b,1098s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 67i,17n,100p,1699b,1098s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Marc\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\t
 crm1000.pk>{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/tex-gyre/q-ec.enc}{C:/P
 rogram Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.
@@ -2541,9 +2546,9 @@ X 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/public/tex-gyre/qagb.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic
 /uhvr8a.pfb>
-Output written on main.pdf (85 pages, 6856849 bytes).
+Output written on main.pdf (85 pages, 6857706 bytes).
 PDF statistics:
- 1948 PDF objects out of 2073 (max. 8388607)
+ 1949 PDF objects out of 2073 (max. 8388607)
  358 named destinations out of 1000 (max. 500000)
  1001 words of extra memory for PDF output out of 10000 (max. 10000000)
 

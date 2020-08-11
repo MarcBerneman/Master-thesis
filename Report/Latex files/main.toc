@@ -84,7 +84,7 @@
 \contentsline {paragraph}{Non realizable ideal controller}{42}{section*.55}%
 \contentsline {paragraph}{Optimization strategy}{42}{section*.56}%
 \contentsline {section}{\numberline {3.10}Summary}{42}{section.3.10}%
-\contentsline {section}{\numberline {3.11}Discrete time simulations}{43}{section.3.11}%
+\contentsline {section}{\numberline {3.11}Discrete-time simulations}{43}{section.3.11}%
 \contentsline {subsection}{\numberline {3.11.1}Introduction}{43}{subsection.3.11.1}%
 \contentsline {paragraph}{System models}{43}{section*.58}%
 \contentsline {paragraph}{Noise models}{44}{section*.61}%

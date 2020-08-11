@@ -43,7 +43,7 @@ In the FD this becomes
 \begin{equation*}
     U(j\omega) = 2\pi e^{j\phi} \delta(\omega-\omega_u)
 \end{equation*}
-With $\delta$ denoting the Dirac delta function. Using (\ref{eq:Y=GU}) gives the output in the FD is
+With $\delta$ denoting the Dirac delta function. Using (\ref{eq:Y=GU}) gives the output in the FD
 \begin{equation*}
     Y(j\omega) = 2\pi |G(j\omega_u)| e^{j(\phi+\angle{G(j\omega_u)})} \delta(\omega-\omega_u)
 \end{equation*}
@@ -62,7 +62,7 @@ After a brief calculation, the output is found to be given by
     }
 \end{equation*}
 
-To summarize, if the input of a system is a sine wave, then the output will be a sine wave with the same frequency, but with a different phase and amplitude determined by the value of the transfer function at that frequency.
+To summarize, if the input of a system is a cosine wave, then the output will be a cosine wave with the same frequency, but with a different phase and amplitude determined by the value of the transfer function at that frequency.
 
 \section{Discrete Fourier transform}
 Using the Fourier transform is not practical as it requires an infinite amount of data and an infinite time resolution to compute. The discrete Fourier transform (DFT) solves both of these problems.
@@ -225,7 +225,7 @@ This system is excited by the random phase multisine shown in figure \ref{fig:MS
 \newpage
 \section{Measurement set-ups}
 \subsection{Zero-order hold set-up}
-In a lot of measurement set-ups, the input signal is generated digitally with a Zero-order hold (ZOH). This means that the signal is kept constant for a whole sampling period. At the sampling instants, a CT system $G(s)$ preceded by a ZOH can be modelled exactly as a DT system. \cite[eq. (34)]{ZOH_reference}
+In a lot of measurement set-ups, the input signal is generated digitally with a zero-order hold (ZOH). This means that the signal is kept constant for a whole sampling period. At the sampling instants, a CT system $G(s)$ preceded by a ZOH can be modelled exactly as a DT system. \cite[eq. (34)]{ZOH_reference}
 \begin{equation}
     G_{\mathrm{ZOH}}(z) = (1-z^{-1})  \mathcal{Z}\Big\{\mathcal{L}^{-1}\big\{\frac{G(s)}{s} \big\}\rvert_{t=n T_s}\Big\}
     \label{eq:ZOH_transform}
@@ -383,7 +383,7 @@ It turns out that (see appendix \ref{appendix:white_noise})
 \section{Periodic signals}
 What happens to the DFT spectrum when we apply a signal periodically? Let's assume that we have a sequence $\tilde{x}(n)$ of length $N$ with corresponding DFT
 \begin{equation*}
-    \tilde{X}(k) = \sum_{n=0}^{N-1} \tilde{x}(n) e^{-j 2\pi k n/N}
+    \tilde{X}(k) = \frac{1}{N}\sum_{n=0}^{N-1} \tilde{x}(n) e^{-j 2\pi k n/N}
 \end{equation*}
 Now, the sequence $\tilde{x}(n)$ will be repeated one more time to obtain a sequence of length $2N$.
 \begin{equation*}
@@ -671,7 +671,7 @@ The numerator is the mean of the squares of the noiseless output $y_0$ and the d
 \begin{equation*}
     \text{RMS}[|\hat G - G|](\Omega_k) = \sqrt{\frac{1}{100}\sum_{i=1}^{100}|\hat G^{(i)}(\Omega_k)-G(\Omega_k)|^2} 
 \end{equation*}
-with $\hat G^{(i)}(\Omega_k)$ being the nonparametric estimate of $G(\Omega_k)$ for the $i$-th noise realization. The parameters used for the LPM are $R=2$, $n = 6$ which results in $q^{\text{noise}} = 9$ degrees of freedom. To make the results more presentable, the data points are taken together in windows of size 50 and are averaged. The results are shown in figure \ref{fig:LPM_example}. Not taking the transient into account is significantly worse around the resonance frequency of the system. The transient resembles the FRF of the system, which is why the error is most pronounced around the resonance frequency. However, far away from the resonance frequency, not taking the transient into account is approximately 1 dB better than using the Robust LPM. This is because the transient term is below the random noise contribution. LPM uses a noisy estimate of the transient and this estimate is subtracted from the output spectrum, leading to an increased variance. Finally, the robust LPM seems to be slightly better than windowing in this simulation.
+with $\hat G^{(i)}(\Omega_k)$ being the nonparametric estimate of $G(\Omega_k)$ for the $i$-th noise realization. The parameters used for the LPM are $R=2$, $n = 6$ which results in $q^{\text{noise}} = 9$ degrees of freedom. To make the results more presentable, the data points are taken together in windows of size 50 and are averaged. The results are shown in figure \ref{fig:LPM_example}. Not taking the transient into account is significantly worse around the resonance frequency of the system. The transient resembles the FRF of the system, which is why the error is most pronounced around the resonance frequency. However, far away from the resonance frequency, not taking the transient into account is approximately 1 dB better than using the Robust LPM. This is because the transient term is below the random noise contribution. The robust LPM uses a noisy estimate of the transient and this estimate is subtracted from the output spectrum, leading to an increased variance. Finally, the robust LPM seems to be slightly better than windowing in this simulation.
 
 
 \begin{figure}[H]
@@ -747,7 +747,7 @@ Noise that affects the output also affects the input due to the feedback. Two po
 \end{equation*}
 
 \paragraph{$\boldsymbol{r(n)}$ is a multisine}
-In this case we can apply multiple periods $P$ to the system. It is assumed that enough time has passed for the system transient to fade away and the noise transients will be neglected.
+In this case we can apply multiple periods $P$ to the system. It is assumed that enough time has passed for the system transients to fade away and the noise transients will be neglected.
 \begin{align*}
     &Y^{(p)}(k) = \frac{G(\Omega_k)}{1+G(\Omega_k)} R^{(p)}(k) + \frac{1}{1+G(\Omega_k)} V^{(p)}(k)\\
     &U^{(p)}(k) = \frac{1}{1+G(\Omega_k)} R^{(p)}(k) - \frac{1}{1+G(\Omega_k)} V^{(p)}(k)
@@ -801,6 +801,6 @@ Multisines can be used to estimate the FRF nonparametrically. The robust LPM all
 
 It is useful to keep the reference signal that is applied to the system. When the system is excited by an arbitrary excitation, this information can be used to get a consistent estimate of the FRF even if both the input and the output are perturbed by noise.
 
-Finally, the authors of \cite{pintelon_book} offer MATLAB code that can perform the robust LPM for periodic and arbitrary excitations. These MATLAB function can also identify the best linear approximation of a nonlinear system. These functions can also handle MIMO systems.
+Finally, the authors of \cite{pintelon_book} offer MATLAB code that can perform the robust LPM for periodic and arbitrary excitations. These MATLAB functions can also identify the best linear approximation of a nonlinear system. These functions can also handle MIMO systems.
 
 
