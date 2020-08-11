@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (MiKTeX 2.9.7440 64-bit)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+The style file: vancouver.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Database file #1: references.bib
+Warning--empty author and editor in identification_of_dynamical_sytems_slides
+You can't pop an empty literal stack for entry Wang_crosscorrelation
+while executing---line 1863 of file vancouver.bst
+`journal' is a missing field, not a string, for entry iniconfig
+while executing---line 1863 of file vancouver.bst
+Warning--empty journal in iniconfig
+Warning--empty year in iniconfig
+You've used 13 entries,
+            3177 wiz_defined-function locations,
+            733 strings with 6888 characters,
+and the built_in function-call counts, 13599 in all, are:
+= -- 1710
+> -- 98
+< -- 3
++ -- 56
+- -- 24
+* -- 987
+:= -- 1512
+add.period$ -- 51
+call.type$ -- 13
+change.case$ -- 5
+chr.to.int$ -- 6
+cite$ -- 16
+duplicate$ -- 1291
+empty$ -- 1319
+format.name$ -- 30
+if$ -- 3273
+int.to.chr$ -- 0
+int.to.str$ -- 13
+missing$ -- 103
+newline$ -- 73
+num.names$ -- 13
+pop$ -- 233
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 215
+stack$ -- 0
+substring$ -- 2070
+swap$ -- 231
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 3
+while$ -- 82
+width$ -- 15
+write$ -- 152
+(There were 2 error messages)

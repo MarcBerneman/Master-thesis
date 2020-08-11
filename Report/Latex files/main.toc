@@ -1,0 +1,132 @@
+\babel@toc {dutch}{}
+\contentsline {chapter}{Acknowledgements}{I}{chapter*.1}%
+\contentsline {chapter}{Abstract}{I}{chapter*.1}%
+\babel@toc {english}{}
+\babel@toc {english}{}
+\contentsline {chapter}{Table of Contents}{IV}{chapter*.3}%
+\contentsline {chapter}{List of Abbreviations}{V}{section*.4}%
+\contentsline {part}{A frequency domain approach to data-driven control}{1}{table.0.1}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Preliminaries}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduction}{2}{section.2.1}%
+\contentsline {section}{\numberline {2.2}LTI systems}{2}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Single sine excitations}{3}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Discrete Fourier transform}{3}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Perfect reconstruction}{4}{section.2.5}%
+\contentsline {paragraph}{Periodicity}{4}{section*.7}%
+\contentsline {paragraph}{Leakage}{4}{section*.8}%
+\contentsline {paragraph}{Aliasing}{4}{section*.9}%
+\contentsline {section}{\numberline {2.6}Frequency response function estimation}{5}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Multisine excitations}{5}{section.2.7}%
+\contentsline {paragraph}{Magnitude choice}{5}{section*.10}%
+\contentsline {paragraph}{Phase choice}{6}{section*.11}%
+\contentsline {paragraph}{Example}{7}{section*.13}%
+\contentsline {section}{\numberline {2.8}Measurement set-ups}{9}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}Zero-order hold set-up}{9}{subsection.2.8.1}%
+\contentsline {paragraph}{Example}{9}{section*.18}%
+\contentsline {subsection}{\numberline {2.8.2}Band-limited set-up}{10}{subsection.2.8.2}%
+\contentsline {section}{\numberline {2.9}System transients}{11}{section.2.9}%
+\contentsline {paragraph}{CT transients}{12}{section*.22}%
+\contentsline {paragraph}{Example}{13}{section*.23}%
+\contentsline {section}{\numberline {2.10}Frequency domain methods}{13}{section.2.10}%
+\contentsline {section}{\numberline {2.11}White noise}{14}{section.2.11}%
+\contentsline {section}{\numberline {2.12}Periodic signals}{14}{section.2.12}%
+\contentsline {paragraph}{Example}{15}{section*.25}%
+\contentsline {section}{\numberline {2.13}Transient suppression}{15}{section.2.13}%
+\contentsline {subsection}{\numberline {2.13.1}Windowing}{16}{subsection.2.13.1}%
+\contentsline {paragraph}{Example}{17}{section*.27}%
+\contentsline {subsection}{\numberline {2.13.2}Parametric estimation}{17}{subsection.2.13.2}%
+\contentsline {paragraph}{Example}{18}{section*.29}%
+\contentsline {section}{\numberline {2.14}Local polynomial method}{18}{section.2.14}%
+\contentsline {subsection}{\numberline {2.14.1}Response of a system excited by a periodic input}{19}{subsection.2.14.1}%
+\contentsline {paragraph}{Example}{19}{section*.31}%
+\contentsline {subsection}{\numberline {2.14.2}Algorithm}{20}{subsection.2.14.2}%
+\contentsline {paragraph}{Example}{20}{section*.33}%
+\contentsline {paragraph}{Example continued}{20}{section*.34}%
+\contentsline {subsection}{\numberline {2.14.3}Variance estimate}{21}{subsection.2.14.3}%
+\contentsline {subsection}{\numberline {2.14.4}Example}{22}{subsection.2.14.4}%
+\contentsline {subsection}{\numberline {2.14.5}Choice of the order and degrees of freedom}{23}{subsection.2.14.5}%
+\contentsline {paragraph}{Order}{23}{section*.36}%
+\contentsline {paragraph}{Degrees of freedom}{23}{section*.37}%
+\contentsline {section}{\numberline {2.15}Generalization}{23}{section.2.15}%
+\contentsline {subsection}{\numberline {2.15.1}Noisy input}{23}{subsection.2.15.1}%
+\contentsline {subsection}{\numberline {2.15.2}Filtered white noise}{23}{subsection.2.15.2}%
+\contentsline {subsection}{\numberline {2.15.3}Feedback}{24}{subsection.2.15.3}%
+\contentsline {paragraph}{$\boldsymbol {r(n)}$ is a multisine}{24}{section*.39}%
+\contentsline {paragraph}{$\boldsymbol {r(n)}$ is an arbitrary signal}{25}{section*.40}%
+\contentsline {paragraph}{Indirect method}{25}{section*.41}%
+\contentsline {section}{\numberline {2.16}Conclusion}{26}{section.2.16}%
+\contentsline {chapter}{Appendices}{27}{chapter*.42}%
+\contentsline {section}{\numberline {2.A}Transient term}{27}{section.1.2.A}%
+\contentsline {section}{\numberline {2.B}DFT of white noise}{29}{section.1.2.B}%
+\contentsline {paragraph}{$\boldsymbol {\mathbb {E}\{V(k)\}}$}{29}{section*.43}%
+\contentsline {paragraph}{$\boldsymbol {\mathbb {E}\{V(k)\overline {V(l)}\}}$}{29}{section*.44}%
+\contentsline {paragraph}{$\boldsymbol {\mathbb {E}\{V(k)V(l)\}}$}{29}{section*.45}%
+\contentsline {section}{\numberline {2.C}Covariance estimation}{30}{section.1.2.C}%
+\contentsline {chapter}{\numberline {3}Model reference control}{31}{appendix.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{31}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Problem statement}{31}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Convex cost}{32}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Other cost functions}{33}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Correlation-based approach}{33}{section.3.5}%
+\contentsline {paragraph}{Model}{33}{section*.47}%
+\contentsline {paragraph}{Error signal}{33}{section*.48}%
+\contentsline {paragraph}{Input filtering}{34}{section*.49}%
+\contentsline {paragraph}{Correlation criterion}{34}{section*.50}%
+\contentsline {section}{\numberline {3.6}Translation to the frequency domain}{35}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Disadvantages of TD}{35}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Nonparametric estimate}{35}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.7}Parseval's theorem}{38}{section.3.7}%
+\contentsline {paragraph}{Example}{38}{section*.51}%
+\contentsline {section}{\numberline {3.8}Bias}{40}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Weighted nonlinear least squares}{41}{section.3.9}%
+\contentsline {paragraph}{Realizable ideal controller}{41}{section*.54}%
+\contentsline {paragraph}{Non realizable ideal controller}{42}{section*.55}%
+\contentsline {paragraph}{Optimization strategy}{42}{section*.56}%
+\contentsline {section}{\numberline {3.10}Summary}{42}{section.3.10}%
+\contentsline {section}{\numberline {3.11}Discrete time simulations}{43}{section.3.11}%
+\contentsline {subsection}{\numberline {3.11.1}Introduction}{43}{subsection.3.11.1}%
+\contentsline {paragraph}{System models}{43}{section*.58}%
+\contentsline {paragraph}{Noise models}{44}{section*.61}%
+\contentsline {paragraph}{Optimization strategies}{44}{section*.63}%
+\contentsline {paragraph}{Input}{45}{section*.64}%
+\contentsline {paragraph}{Nonparametric estimate}{45}{section*.65}%
+\contentsline {paragraph}{Evaluation}{45}{section*.66}%
+\contentsline {subsection}{\numberline {3.11.2}Simple system}{47}{subsection.3.11.2}%
+\contentsline {paragraph}{Influence of $\mathbf {l_1}$}{47}{section*.67}%
+\contentsline {paragraph}{Transient suppression}{48}{section*.70}%
+\contentsline {paragraph}{TD vs. FD vs. WNLS}{50}{section*.74}%
+\contentsline {subsection}{\numberline {3.11.3}Long transient system}{51}{subsection.3.11.3}%
+\contentsline {subsection}{\numberline {3.11.4}System with non realizable controller}{53}{subsection.3.11.4}%
+\contentsline {paragraph}{Optimal controller}{53}{section*.80}%
+\contentsline {paragraph}{White noise}{54}{section*.82}%
+\contentsline {paragraph}{Coloured noise}{55}{section*.84}%
+\contentsline {section}{\numberline {3.12}Conclusion}{56}{section.3.12}%
+\contentsline {chapter}{Appendices}{57}{appendix*.86}%
+\contentsline {section}{\numberline {3.A}Division by auto-power spectrum}{57}{section.2.3.A}%
+\contentsline {section}{\numberline {3.B}DFT of cross-correlation}{58}{section.2.3.B}%
+\contentsline {section}{\numberline {3.C}Unstable systems}{59}{section.2.3.C}%
+\contentsline {subsection}{\numberline {3.C.1}Correlation-based approach}{59}{subsection.2.3.C.1}%
+\contentsline {paragraph}{Model}{59}{section*.87}%
+\contentsline {paragraph}{Error signal}{59}{section*.89}%
+\contentsline {paragraph}{Reference filtering}{59}{section*.90}%
+\contentsline {paragraph}{Correlation criterion}{60}{section*.91}%
+\contentsline {subsection}{\numberline {3.C.2}Nonparametric estimate}{60}{subsection.2.3.C.2}%
+\contentsline {chapter}{\numberline {4}Guaranteed stability}{61}{appendix.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{61}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Small-gain theorem}{61}{section.4.2}%
+\contentsline {paragraph}{Example}{61}{section*.93}%
+\contentsline {subsection}{\numberline {4.2.1}Stability constraints}{62}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Better stability constraints}{63}{subsection.4.2.2}%
+\contentsline {chapter}{\numberline {5}Real experiment}{65}{appendix.5}%
+\contentsline {section}{\numberline {5.1}Introduction}{65}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Nonparametric estimate}{66}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Controller design}{68}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Controller realization}{70}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Closed loop}{74}{subsection.5.1.4}%
+\contentsline {section}{\numberline {5.2}Conclusion}{75}{section.5.2}%
+\contentsline {chapter}{Conclusion}{76}{appendix*.109}%
+\contentsline {paragraph}{Future work}{76}{section*.110}%
+\contentsline {paragraph}{Contributions}{76}{section*.111}%
+\contentsline {chapter}{Software}{77}{appendix*.112}%
+\contentsline {chapter}{Bibliography}{78}{appendix*.113}%

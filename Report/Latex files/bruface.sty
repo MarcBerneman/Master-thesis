@@ -1,0 +1,149 @@
+\ProvidesPackage{bruface}
+\RequirePackage{color}
+\RequirePackage{ifxetex}
+\RequirePackage{tikz}
+\RequirePackage{adjustbox}
+\RequirePackage{tcolorbox}
+%\RequirePackage{graphicx}
+% VUB is in Belgium, we use A4
+% Additionally, we use `geometry` to play with margins on the title page
+\RequirePackage[a4paper]{geometry}
+\definecolor{shadecolor}{RGB}{255,102,0}
+
+\ifxetex
+\else
+\usepackage{epstopdf}%needed for the ULB logo
+\fi
+
+\RequirePackage{kvoptions}
+\DeclareBoolOption[false]{spotcolors}
+\DeclareComplementaryOption{nospotcolors}{spotcolors}
+\ProcessKeyvalOptions*{}
+
+\ifbruface@spotcolors
+\RequirePackage[spotcolors]{vubprivate}
+\else
+\RequirePackage{vubprivate}
+\fi
+
+\newcommand\@faculty{Set a faculty using \textbackslash faculty\{\textit{Engineering Sciences}\}}
+\newcommand\@subtitle{}
+\newcommand\@academicYear{}
+\newcommand\@promotor{}
+\newcommand\@coSupervisor{}
+\newcommand\@masterORassessor{}
+
+\@ifundefined{faculty}{%
+    \newcommand{\faculty}[1]{%
+        \makeatletter%
+        \renewcommand\@faculty{#1}%
+        \makeatother%
+    }%
+}
+
+\@ifundefined{subtitle}{%
+    \newcommand{\subtitle}[1]{%
+        \makeatletter%
+        \renewcommand\@subtitle{#1}%
+        \makeatother%
+    }%
+}
+
+\@ifundefined{promotor}{%
+	\newcommand{\promotor}[2]{%
+		\makeatletter%
+		\renewcommand\@promotor{{\vubfontbf{#1}}\\
+			#2}%
+		\makeatother%
+	}%
+}
+
+\@ifundefined{academicYear}{%
+	\newcommand{\academicYear}[1]{%
+		\makeatletter%
+		\renewcommand\@academicYear{#1}%
+		\makeatother%
+	}%
+}
+
+\@ifundefined{coSupervisor}{%
+	\newcommand{\coSupervisor}[2]{%
+		\makeatletter%
+		\renewcommand\@coSupervisor{{\vubfontbf{#1}}\\
+			#2}%
+		\makeatother%
+	}%
+}
+
+\@ifundefined{masterORassessor}{%
+	\newcommand{\masterORassessor}[2]{%
+		\makeatletter%
+		\renewcommand\@masterORassessor{{\vubfontbf{#1}}\\
+			#2}%
+		\makeatother%
+	}%
+}
+
+\renewcommand\maketitle{
+\begin{titlepage}
+	\fontsize{12}{16}
+    \newgeometry{left=1cm,top=5mm,right=2cm,bottom=1cm}
+    \begin{minipage}{\dimexpr\textwidth}
+      \includegraphics[height=1.975cm]{logos/ulb_logo_3lp.jpg}%
+      \hfill%
+      {\vspace{5mm}\includegraphics[height=3cm]{logos/bruface_logo.png}}%
+      \hfill%
+      \includegraphics[height=2.025cm]{logos/vub_logo_cmyk}%
+    \end{minipage}
+
+    \vfill
+
+    \hspace{1cm}\begin{minipage}{\dimexpr\textwidth-2cm}
+      {\color{vubbleu} \Huge \textsf{\textbf{\@title}}}
+
+      \vspace{5mm}
+
+      {\color{vubbleu} \LARGE \textsf{\@subtitle}}
+
+      \vspace{2cm}
+
+      {\Large \textsf{\@author}}
+
+      \vspace{5mm}
+
+      {\color{vuboranje} \large \textsf{\@date}}
+      
+    \end{minipage}
+
+    \vspace*{4cm}
+
+    \begin{minipage}{\dimexpr\textwidth}
+    	\hspace*{1cm}\begin{minipage}{0.495\textwidth}
+    		{\includegraphics[height=3.5cm]{logos/sceau-a-quadri.jpg}
+    		\hspace*{3mm}
+    		\includegraphics[height=3.5cm]{logos/vub-zegel-cmyk.jpg}}\\
+    		{   }\\
+    		{{\vubfontbf{Academic year}}\\
+            \@academicYear}
+    	\end{minipage}
+		\vspace*{1cm}
+    	\hspace*{-2cm}
+    	\begin{minipage}{0.495\textwidth}
+            \begin{flushright}
+				\@promotor\\
+				\vspace*{4.5mm}
+				\@coSupervisor\\
+				\vspace*{4.5mm}
+				\@masterORassessor\\
+            \end{flushright}
+    	\end{minipage}
+    \end{minipage}
+	\vspace*{5mm}
+	\hspace*{4mm}\begin{minipage}{\dimexpr\textwidth}
+		\noindent\colorbox{vuboranje}{\parbox{\dimexpr\textwidth-2mm}{\vubfontbf{\centering\color{white} \large \@faculty}}}
+	\end{minipage}
+    \restoregeometry
+\end{titlepage}
+}
+
+\endinput

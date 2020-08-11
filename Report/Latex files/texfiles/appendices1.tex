@@ -1,0 +1,189 @@
+\section{Transient term}
+\label{appendix:transient_term}
+Suppose that a DT LTI system is of the following form.
+\begin{equation}
+    a_0 y(n) + a_1 y(n-1) + a_2 y(n-2) = b_0 u(n) + b_1 u(n-1)
+    \label{eq:DT_LTI_sys_example}
+\end{equation}
+The DFT of a sequence is actually just a windowed version of the Z-transform. To see this, the window is defined as
+\begin{equation*}
+    w(n) = \begin{cases}
+        1/N , & 0 \leq n < N\\
+        0 , & \text{otherwise}
+    \end{cases}
+\end{equation*}
+The windowed Z-transform of a sequence $x(n)$ is then given by
+\begin{equation*}
+    \mathcal{Z}\{w(n) x(n)\} = \sum_{n=-\infty}^{+\infty} w(n) x(n) z^{-n} = \frac{1}{N} \sum_{n=0}^{N-1} x(n) z^{-n}
+\end{equation*}
+The expression above evaluated in $z = e^{j 2 \pi k/N}$ is equal to the DFT of $x(n)$.
+\begin{equation*}
+     \mathcal{Z}\{w(n) x(n)\}\rvert_{z=e^{j 2 \pi k/N}} = \frac{1}{N}\sum_{n=0}^{N-1} x(n) e^{-j 2 \pi k n/N} = \text{DFT}\{x(n)\}
+\end{equation*}
+Thus, taking the windowed Z-transform of both sides of (\ref{eq:DT_LTI_sys_example}) and evaluating it in $z = e^{j 2 \pi k/N}$ is the same as taking the DFT of both sides.
+
+For simplicity, let's only consider one of the terms.
+\begin{equation*}
+    a_p w(n) y(n-p)
+\end{equation*}
+$a_p$ is just a constant, so that can also be left out in the analysis.
+\begin{equation*}
+    \mathcal{Z}\{w(n) y(n-p)\} = \frac{1}{N}\sum_{n=0}^{N-1} y(n-p) z^{-n}
+\end{equation*}
+After some manipulations:
+\begin{equation*}
+    N \mathcal{Z}\{w(n) y(n-p)\} = z^{-p} \sum_{n=0}^{N-1} y(n) z^{-n} + \sum_{n=0}^{p-1} [y(n-p) - y(n-p+N) z^{-N}] z^{-n}
+\end{equation*}
+Evaluating this expression in $z = e^{j 2 \pi k /N}$ gives
+\begin{align*}
+	N \mathcal{Z}\{w(n) y(n-p)\}\rvert_{z=e^{j 2 \pi k/N}} =& (e^{-j 2 \pi k/N})^p \sum_{n=0}^{N-1} y(n) e^{-j 2 \pi k n/N}\\  + & \sum_{n=0}^{p-1} [y(n-p) - y(n-p+N)] (e^{-j 2 \pi k/N})^n
+\end{align*}
+Note that $z^{-N}$ disappears because $e^{-j 2 \pi N n/N} = 1$. The first term contains the DFT of $y(n)$. The second term is a polynomial in $e^{-j 2 \pi k/N}$ that depends on $y(n-p)-y(n-p+N)$. In other words, it depends on the difference between samples from the previous period and samples from the current period.
+\begin{equation*}
+     \mathcal{Z}\{w(n) y(n-p)\}\rvert_{z=e^{j 2 \pi k/N}} = (e^{-j 2 \pi k/N})^p Y(k)  + I_{y,p}(e^{-j 2 \pi k/N})
+\end{equation*}
+Applying this to (\ref{eq:DT_LTI_sys_example}) gives
+\begin{equation}
+    Y(k) (\sum_{p=0}^2 a_p (e^{-j 2 \pi k/N})^p) = U(k) (\sum_{p=0}^1 b_p (e^{-j 2 \pi k/N})^p) + I(e^{-j 2 \pi k/N})
+    \label{eq:Y(k)sum_blabla}
+\end{equation}
+with
+\begin{equation}
+    I(e^{-j 2 \pi k/N}) = \sum_{p=0}^1 b_p I_{u,p}(e^{-j 2 \pi k/N}) - \sum_{p=0}^2 a_p I_{y,p}(e^{-j 2 \pi k/N})
+    \label{eq:I_explicit}
+\end{equation}
+Notice that
+\begin{equation*}
+    G(z^{-1})\rvert_{z=e^{j 2 \pi k/N}} = G(e^{-j 2 \pi k/N}) = \frac{B(e^{-j 2 \pi k/N})}{A(e^{-j 2 \pi k/N})} =  \frac{\sum_{p=0}^1 b_p (e^{-j 2 \pi k/N})^p}{\sum_{p=0}^2 a_p (e^{-j 2 \pi k/N})^p}
+\end{equation*}
+Dividing (\ref{eq:Y(k)sum_blabla}) by $A(e^{-j 2 \pi k/N})$ then gives the final form
+\begin{equation}
+\boxed{
+    Y(k) = G(e^{-j 2 \pi k/N}) U(k) + T(k)
+    }
+\end{equation}
+with
+\begin{equation*}
+    T(k) = \frac{I(e^{-j 2 \pi k/N})}{A(e^{-j 2 \pi k/N})}
+\end{equation*}
+
+\newpage
+\section{DFT of white noise}
+\label{appendix:white_noise}
+
+A white noise sequence $v(n)$ has the following properties
+\begin{align*}
+    &\mathbb{E}\{v(n)\} = 0\\
+    &\mathbb{E}\{v(n)v(m)\} = \sigma^2 \delta(n-m)
+\end{align*}
+The DFT of this white noise sequence is
+\begin{equation*}
+    V(k) = \frac{1}{N}\sum_{n=0}^{N-1} v(n) e^{-j 2\pi k n/N}
+\end{equation*}
+
+\paragraph{$\boldsymbol{\mathbb{E}\{V(k)\}}$} 
+The expected value of $V(k)$ is
+\begin{equation*}
+    \mathbb{E}\{V(k)\} = \frac{1}{N}\sum_{n=0}^{N-1} \mathbb{E}\{v(n)\} e^{-j 2\pi k n/N} = \frac{1}{N}\sum_{n=0}^{N-1} 0 \, e^{-j 2\pi k n/N} = 0
+\end{equation*}
+
+\paragraph{$\boldsymbol{\mathbb{E}\{V(k)\overline{V(l)}\}}$}
+The expected value of $V(k)\overline{V(l)}$ is
+\begin{align*}
+    \mathbb{E}\{V(k)\overline{V(l)}\} &= \frac{1}{N^2}\mathbb{E}\{\sum_{n=0}^{N-1} v(n) e^{-j 2\pi k n/N} \sum_{m=0}^{N-1} v(m) e^{j 2\pi l m/N}\}\\
+    &= \frac{1}{N^2}\sum_{n=0}^{N-1}\sum_{m=0}^{N-1} \mathbb{E}\{v(n)v(m)\}  e^{-j 2\pi k n/N} e^{j 2\pi l m/N}\\
+    &=\frac{\sigma^2}{N^2}\sum_{n=0}^{N-1}\sum_{m=0}^{N-1}\delta(n-m)  e^{-j 2\pi k n/N} e^{j 2\pi l m/N}\\
+    &=\frac{\sigma^2}{N^2}\sum_{n=0}^{N-1}e^{-j 2\pi (k-l) n/N} =
+    \begin{cases} 
+        \frac{\sigma^2}{N} \text{ if } \text{mod}(k-l,N) = 0\\
+        0 \text{ otherwise}
+    \end{cases}
+\end{align*}
+When $k = l$, this result becomes
+\begin{equation*}
+    \mathbb{E}\{|V(k)|^2\} = \frac{\sigma^2}{N}
+\end{equation*}
+
+\paragraph{$\boldsymbol{\mathbb{E}\{V(k)V(l)\}}$}
+The expected value of $V(k)V(l)$ is
+\begin{align*}
+    \mathbb{E}\{V(k)V(l)\} &= \frac{1}{N^2} \mathbb{E}\{\sum_{n=0}^{N-1} v(n) e^{-j 2\pi k n/N} \sum_{m=0}^{N-1} v(m) e^{-j 2\pi l m/N}\}\\
+    &= \frac{1}{N^2} \sum_{n=0}^{N-1}\sum_{m=0}^{N-1} \mathbb{E}\{v(n)v(m)\}  e^{-j 2\pi k n/N} e^{-j 2\pi l m/N}\\
+    %&=\frac{\sigma^2}{N^2}\sum_{n=0}^{N-1}\sum_{m=0}^{N-1}\delta(n-m)  e^{-j 2\pi k n/N} e^{-j 2\pi l m/N}\\
+    &=\frac{\sigma^2}{N^2}\sum_{n=0}^{N-1}e^{-j 2\pi (k+l) n/N} =
+    \begin{cases} 
+        \frac{\sigma^2}{N} \text{ if } \text{mod}(k+l,N) = 0\\
+        0 \text{ otherwise}
+    \end{cases}
+\end{align*}
+When $k = l$ and $\text{mod}(2k,N) \neq 0$, this result becomes
+\begin{equation*}
+    \mathbb{E}\{V^2(k)\} = 0
+\end{equation*}
+
+\newpage
+\section{Covariance estimation}
+\label{appendix:cov_est}
+The output spectrum in a window of size $2n$ around an excited frequency line is given by
+\begin{equation*}
+    Y_n = K_n \Theta + V_n
+\end{equation*}
+The least squares solution is given by
+\begin{equation*}
+    \hat{\Theta} = (K_n^H K_n)^{-1}K_n^H Y_n
+\end{equation*}
+A key assumption used to estimate the covariance $C_Y(kP)$ is that $V_n$ is assumed to have a flat power spectrum in the window $2n$.
+
+The residual is the difference between the measured spectrum and the predicted spectrum.
+\begin{equation*}
+    \hat{V}_n = Y_n - K_n \hat\Theta = (I_{2n}-K_n(K_n^H K_n)^{-1}K_n^H) Y_n = P_n Y_n
+\end{equation*}
+Using the fact that $P_n K_n = K_n - K_n = 0$ we get
+\begin{equation*}
+    \hat{V}_n = P_n V_n
+\end{equation*}
+Next up, we want to to see how $\hat V_n^H \hat V_n$ relates to $V_n^H V_n$.
+\begin{equation*}
+    \hat V_n^H \hat V_n = V_n^H P_n^H P_n V_n
+\end{equation*}
+First, it is easy to see that $P_n^H = P_n$. Next, it turns out that $P_n$ is an idempotent matrix.
+\begin{align*}
+    P_n P_n &= (I_{2n}-K_n(K_n^H K_n)^{-1}K_n^H)(I_{2n}-K_n(K_n^H K_n)^{-1}K_n^H) \\
+    &= I_{2n} - 2 K_n(K_n^H K_n)^{-1}K_n^H + K_n(K_n^H K_n)^{-1}K_n^H = P_n
+\end{align*}
+Thus, we get
+\begin{equation}
+    \hat V_n^H \hat V_n = V_n^H P_n V_n = \text{trace}(V_n^H P_n V_n) = \text{trace}(P_n V_n V_n^H)
+    \label{eq:hatVnHhatVn}
+\end{equation}
+In this step we used the fact that the trace of a scalar is a scalar and the fact that matrices in a trace can be circularly permuted ($\text{trace}(A B C) = \text{trace}(B C A)$).
+It is assumed that $V_n$ has a flat power spectrum in the window $2n$, i.e. $\sigma_Y^2(kP+r_i) = \sigma_Y^2(kP)$. This means that
+\begin{equation*}
+    \mathbb{E}\{V_n V_n^H\} = \sigma_Y^2(kP) I_{2n}
+\end{equation*}
+Plugging this into (\ref{eq:hatVnHhatVn}) and taking the expected value gives
+\begin{equation}
+    \mathbb{E}\{\hat V_n^H \hat V_n\} = \sigma_Y^2(kP)\text{trace}(P_n)
+\end{equation}
+$P_n$ is an idempotent matrix, meaning that its eigenvalues can only be 0 or 1. Additionally, because $P_n$ and $K_n$ are each other's orthogonal complement, the rank of $P_n$ is related to the rank of $K_n$. 
+\begin{equation*}
+    P_n K_n  = 0 \Rightarrow \text{rank}(P_n) = 2n - \text{rank}(K_n)
+\end{equation*}
+If $K_n$ is full column rank and if $K_n$ has more rows than columns, then the rank of $K_n$ is equal to the number of columns in $K_n$.
+\begin{equation*}
+    \text{rank}(K_n) = R + 1
+\end{equation*}
+The trace of a matrix is the sum of the eigenvalues of a matrix. The sum of the eigenvalues of $P_n$ is exactly equal to the rank of $P_n$, because the rank of $P_n$ is equal to the number of nonzero eigenvalues and because the eigenvalues can only be 0 or 1.
+\begin{equation*}
+    \text{trace}(P_n) = \text{rank}(P_n) = 2n - (R + 1) = q^{\text{noise}}
+\end{equation*}
+Finally, this explains why $\hat V_n^H \hat V_n$ must be divided by $q^{\text{noise}}$ to get an unbiased estimate of the covariance.
+\begin{equation*}
+\boxed{
+     \sigma_Y^2(kP) = \frac{\mathbb{E}\{\hat V_n^H \hat V_n\}}{q^{\text{noise}}}
+     }
+\end{equation*}
+
+
+
+

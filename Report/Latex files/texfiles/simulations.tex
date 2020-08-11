@@ -1,0 +1,31 @@
+\section{Simulations}
+
+\subsection{Simple case}
+
+\begin{equation*}
+    G(z^{-1}) = \frac{0.25 z^{-1}}{1 - 0.75 z^{-1}}
+\end{equation*}
+
+\begin{equation*}
+    K(z^{-1}) = 0.6 + 0.3 \frac{z^{-1}}{1-z^{-1}} = \frac{0.6 - 0.3z^{-1}}{1-z^{-1}} = 
+    \begin{bmatrix}
+        \frac{1}{1-z^{-1}} & \frac{z^{-1}}{1-z^{-1}}
+    \end{bmatrix} 
+    \begin{bmatrix}
+        0.6 \\ -0.3
+    \end{bmatrix}
+\end{equation*}
+
+\begin{equation*}
+    M(z^{-1}) = \frac{K(z^{-1}) G(z^{-1})}{1+K(z^{-1})G(z^{-1})} = \frac{0.15 z^{-1} - 0.075 z^{-2}}{1 - 1.6 z^{-1} + 0.675 z^{-2}}
+\end{equation*}
+
+
+\todo[inline]{Bla bla bla, see figure \ref{fig:simple_case_transient_removed}.}
+
+\begin{figure}
+    \centering
+    \includegraphics[width =\textwidth]{figures/Transient_removed_noiseless_no_constr.eps}
+    \caption{Resulting closed loop systems, with and without transient removal. $l_1 = 63$ (all correlation lags). Transient removed with the robust polynomial method for periodic signals (order = 2).}
+    \label{fig:simple_case_transient_removed}
+\end{figure}

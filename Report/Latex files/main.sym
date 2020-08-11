@@ -1,0 +1,26 @@
+\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
+\begin{theglossary}\glossaryheader
+\glsgroupheading{glssymbols}\relax \glsresetentrylist %
+\glossentry{symb:G(s)}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{IV}}}%
+\glossentry{symb:G(z^-1)}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{IV}}}%
+\glossentry{symb:N}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{IV}}}%
+\glossentry{symb:R}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{IV}}}%
+\glossentry{symb:ts}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{IV}}}%
+\glossentry{symb:U}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{IV}}}%
+\glossentry{symb:Y}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{IV}}}%
+\glossentry{symb:fs}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{IV}}}%
+\glossentry{symb:r}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{IV}}}%
+\glossentry{symb:u}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{IV}}}%
+\glossentry{symb:y}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{IV}}}%
+\end{theglossary}\glossarypostamble

@@ -1,0 +1,15 @@
+\section{Miscellaneous}
+\subsection{Inner working of lsim}
+The function \emph{lsim} can simulate continuous-time systems. However, the input is given in discrete time. So care must be taken when using this function. The simulation can occur by using either a ZOH or a FOH. If you are simulating a CT system with a ZOH, you are actually measuring the ZOH DT version and not the CT version of the TF. In practice, the ZOH is followed by a reconstruction filter that compensates for this. In simulation you can get around this by using a higher sampling frequency. This works because
+\begin{equation*}
+    G(j 2 \pi f) \approx G_{ZOH}(e^{j 2 \pi f T_s})
+\end{equation*}
+when $f << F_s/2$.
+
+
+\subsection{Put this elsewhere}
+It is then possible to construct $J_{T,l_1}$ by taking the inverse discrete Fourier transform (IDFT) of $\Phi_{u_W \epsilon}$.\todo{Put this part somewhere else maybe}
+\begin{equation*}
+    R_{u_W \epsilon}(\tau,\rho) = \frac{1}{T} IDFT\{\Phi_{u_W \epsilon}(\Omega_k,\rho)\}
+\end{equation*}
+\todo[inline]{write about parceval theorem and how sum in FD is equivalent to sum in TD. by taking subset 2l1+1 in TD you get a less accurate measure of sum in FD, but with less bias as a result}

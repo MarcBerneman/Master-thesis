@@ -1,0 +1,245 @@
+\ProvidesPackage{brufaceStyle}
+\RequirePackage{color}
+\RequirePackage{ifxetex}
+\RequirePackage{adjustbox}
+\RequirePackage{tcolorbox}
+\usepackage{eso-pic,graphicx,transparent}
+
+% Additionally, we use `geometry` to play with margins on the title page
+\RequirePackage[a4paper]{geometry}
+
+\RequirePackage{kvoptions}
+\DeclareBoolOption[false]{spotcolors}
+\DeclareComplementaryOption{nospotcolors}{spotcolors}
+\ProcessKeyvalOptions*{}
+
+\ifbrufaceStyle@spotcolors
+\RequirePackage{colorspace}
+% Define our lovely new colors
+\definespotcolor{vuborange}{PANTONE 021}{0,.78,1.,0}
+\definespotcolor{vubblue}{PANTONE 286}{1,.8,.16,.03}
+\definespotcolor{ulbblue}{PANTONE 658}{0.26,.18,0,.09}
+\else
+\definecolor{vuborange}{cmyk}{0,.78,1.,0}
+\definecolor{vubblue}{cmyk}{1,.8,.16,.03}
+\definecolor{ulbblue}{cmyk}{0.26,.18,0,.09}
+\fi
+
+\ifxetex
+\RequirePackage{fontspec}
+\newfontfamily\tgadventor{TeX Gyre Adventor}
+\fi
+
+\newcommand\vubfont[1]{%
+	\ifxetex
+	\tgadventor{#1}
+	\else
+	\usefont{T1}{qag}{m}{n}#1%
+	\fi
+}
+
+\newcommand\vubfontbf[1]{%
+	\ifxetex
+	\textbf{\tgadventor{#1}}
+	\else
+	\usefont{T1}{qag}{b}{n}#1%
+	\fi
+}
+
+\def\triangleW{4mm}%
+\newcommand\vubtriangle{%
+	% triangle w=4mm, h=10.56mm
+	\begin{tikzpicture}%
+	\fill [fill=vuborange] (0, 0) -- (0, 10.56mm) -- (-\triangleW, 10.56mm);%
+	\end{tikzpicture}%
+}
+\newcommand\ulbtriangle{%
+	% triangle w=4mm, h=4mm
+	\begin{tikzpicture}%
+	\fill [fill=ulbblue] (0, 0) -- (-\triangleW, 0) -- (0, \triangleW);%
+	\end{tikzpicture}%
+}
+
+\newcommand\@subtitle{}
+\newcommand\@academicYear{}
+\newcommand\@promotor{}
+\newcommand\@coSupervisor{}
+\newcommand\@masterAndMajor{}
+
+\@ifundefined{subtitle}{%
+	\newcommand{\subtitle}[1]{%
+		\makeatletter%
+		\renewcommand\@subtitle{#1}%
+		\makeatother%
+	}%
+}
+
+\@ifundefined{promotor}{%
+	\newcommand{\promotor}[1]{%
+		\makeatletter%
+		\renewcommand\@promotor{#1}
+		\makeatother%
+	}%
+}
+
+\@ifundefined{academicYear}{%
+	\newcommand{\academicYear}[1]{%
+		\makeatletter%
+		\renewcommand\@academicYear{#1}%
+		\makeatother%
+	}%
+}
+
+\@ifundefined{coSupervisor}{%
+	\newcommand{\coSupervisor}[1]{%
+		\makeatletter%
+		\renewcommand\@coSupervisor{{#1}}%
+		\makeatother%
+	}%
+}
+
+\@ifundefined{masterAndMajor}{%
+	\newcommand{\masterAndMajor}[2]{%
+		\makeatletter%
+		\renewcommand\@masterAndMajor{#1\\
+			#2}%
+		\makeatother%
+	}%
+}
+
+\renewcommand\maketitle{
+	\begin{titlepage}
+		\fontsize{12}{16}
+		\newgeometry{left=1cm,top=1cm,right=1.8cm,bottom=1cm}
+		\AddToShipoutPictureBG*{%
+			\put(0,0){\parbox[b][\paperheight]{\paperwidth}{%
+				\vfill
+				\centering
+				{\hfill
+				\transparent{0.125}\includegraphics[width=0.4\linewidth]{logos/sceau-a-quadri.png}%
+				\hfill
+				\transparent{0.125}\includegraphics[width=0.4\linewidth]{logos/vub-zegel-cmyk.png}
+				\hfill}%
+				\vspace*{5cm}}%
+			}
+		}
+		\begin{minipage}{\dimexpr\textwidth-1mm}
+			\raisebox{-0.575\height}{\includegraphics[height=2.025cm]{logos/ulb_logo_3lp.png}}%
+			\hfill%
+			\raisebox{-0.5\height}{\includegraphics[height=3.15cm]{logos/bruface_logo.png}}%
+			\hfill%
+			\raisebox{-0.575\height}{\includegraphics[height=2.075cm]{logos/vub_logo_cmyk}}%
+		\end{minipage}
+		
+		\vfill
+		
+		\hspace{5mm}\begin{minipage}{\dimexpr\textwidth-1.2cm}
+			{\linespread{1} \color{vubblue} \Huge \textsf{\textbf{\@title}}\par}%
+			
+			\vspace{5mm}
+			
+			{\linespread{1} \color{vubblue} \huge \textsf{\@subtitle}}%
+			
+			\vspace{1cm}
+			
+			{\LARGE \textsf{\textbf{\@author}}}%
+		\end{minipage}
+		
+		\vspace{6.5cm}
+		
+		\begin{minipage}{\dimexpr\textwidth-4mm}
+			\hspace*{5mm}\begin{minipage}[t]{0.395\textwidth}
+				\vspace{8mm}
+				\textsf{Academic year}\\%
+				\textsf{\@academicYear}
+				\vspace{6mm}
+			\end{minipage}
+			%\vspace*{1cm}
+			\hspace*{-1cm}
+			\begin{minipage}{0.595\textwidth}
+				\begin{flushright}
+					\textsf{Master thesis submitted under the supervision of}\\
+					\textsf{\@promotor}\\
+					\vspace*{2mm}%
+					%\vubfont{the co-supervision of}\\
+					\textsf{the co-supervision of\\\@coSupervisor}\\
+					\vspace*{2mm}%
+					\textsf{in order to be awarded the Degree of}\\
+					\textsf{\@masterAndMajor}
+					\vspace{6mm}%
+				\end{flushright}
+			\end{minipage}
+		\end{minipage}
+		\vspace*{3mm}
+		\hspace*{4mm}\begin{minipage}{\dimexpr\textwidth}
+			\noindent\colorbox{vuborange}{\parbox{\dimexpr\textwidth-2mm}{\vubfontbf{\centering\color{vuborange} \tiny text}}}
+		\end{minipage}
+		\restoregeometry
+	\end{titlepage}
+}
+
+%% below is defined the environment of the abstract regarding BruFacE regulation
+\newcommand\@masterTitle{}
+\newcommand\@authorThesis{}
+\newcommand\@Master{}
+\newcommand\@yearTitle{}
+
+\@ifundefined{masterTitle}{%
+	\newcommand{\masterTitle}[2]{%
+		\makeatletter%
+		\renewcommand\@masterTitle{#1: #2}%
+		\makeatother%
+	}%
+}
+
+\@ifundefined{authorThesis}{%
+	\newcommand{\authorThesis}[1]{%
+		\makeatletter%
+		\renewcommand\@authorThesis{#1}%
+		\makeatother%
+	}%
+}
+
+\@ifundefined{Master}{%
+	\newcommand{\Master}[1]{%
+		\makeatletter%
+		\renewcommand\@Master{#1}%
+		\makeatother%
+	}%
+}
+
+\@ifundefined{yearTitle}{%
+	\newcommand{\yearTitle}[1]{%
+		\makeatletter%
+		\renewcommand\@yearTitle{#1}%
+		\makeatother%
+	}%
+}
+
+\makeatletter
+\renewenvironment{abstract}{
+	%\newgeometry{top=2cm,bottom=2cm,inner=3.5cm,outer=2.5cm}
+	\newgeometry{top=2cm,bottom=2cm,inner=3cm,outer=3cm}
+	
+	\noindent\hrulefill
+	
+	\vspace{1mm}
+	{\noindent\fontsize{11}{15}\textsf{\textbf{\color{vubblue}\@masterTitle}}}\par
+	%{\noindent\fontsize{12}{16}\textbf{Title:\@title}}%
+	\begin{minipage}{\dimexpr\textwidth}
+		\vspace{1mm}
+		\hspace{-5.5mm}\textsf{\@authorThesis: \@author}\\%\textbf{Author:} \@author\\%
+		\vspace{0.5pt}
+		\hspace{-7mm}\textsf{\@Master}\\%\textbf{Master of Science} \@masterAndMajor\par%
+		\vspace{0.5pt}
+		\hspace{-6.5mm}\textsf{\@yearTitle: \@academicYear}%\textbf{Academic year:} \@academicYear%
+		\vspace{1mm}
+	\end{minipage}
+
+	%\noindent\hrulefill\par
+
+	\noindent\hrulefill\par
+	}{\restoregeometry}
+\makeatother
+
+\endinput

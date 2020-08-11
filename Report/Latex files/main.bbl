@@ -1,0 +1,84 @@
+\begin{thebibliography}{10}
+
+\bibitem{Data-driven_model_reference_control}
+van Heusden K, Karimi A, Bonvin D.
+\newblock Data-driven model reference control with asymptotically guaranteed
+  stability.
+\newblock International Journal of Adaptive Control and Signal Processing.
+  2011;25(4):331--351.
+\newblock Available from:
+  \url{https://onlinelibrary.wiley.com/doi/abs/10.1002/acs.1212}.
+
+\bibitem{ZOH_reference}
+{Azar} Y.
+\newblock Z-transforms and their applications in control engineering.
+\newblock Radio and Electronic Engineer. 1965;30(1):53--67.
+
+\bibitem{identification_of_dynamical_sytems_slides}
+Pintelon R. Lecture notes of Identification of Dynamical Systems. VUB; 2019.
+\newblock Available from:
+  \url{https://vubirelec.be/knowledge/downloads/course-material}.
+
+\bibitem{pintelon_book}
+Pintelon R, Schoukens J.
+\newblock System identification : a frequency domain approach.
+\newblock 2nd ed. Hoboken, N.J.: John Wiley \& Sons Inc.; 2012.
+
+\bibitem{markovsky_book}
+Markovsky I.
+\newblock Low Rank Approximation: Algorithms, Implementation, Applications.
+\newblock Springer; 2012.
+\newblock Available from: \url{http://homepages.vub.ac.be/~imarkovs/book.html}.
+
+\bibitem{Wang_crosscorrelation}
+Wang C.
+\newblock Kernel learning for visual perception.
+\newblock Nanyang Technological University; 2019.
+\newblock Available from: \url{https://doi.org/10.32657/10220/47835}.
+
+\bibitem{Zames1966}
+{Zames} G.
+\newblock On the input-output stability of time-varying nonlinear feedback
+  systems--Part II: Conditions involving circles in the frequency plane and
+  sector nonlinearities.
+\newblock IEEE Transactions on Automatic Control. 1966;11(3):465--476.
+
+\bibitem{control_theory_ljung}
+Glad T, Ljung L.
+\newblock Control theory.
+\newblock CRC press; 2000.
+
+\bibitem{Lataire_time-varying}
+Lataire J, Pintelon R, Louarroudi E.
+\newblock Non-parametric estimate of the system function of a time-varying
+  system.
+\newblock Automatica. 2012;48(4):666 -- 672.
+\newblock Available from:
+  \url{http://www.sciencedirect.com/science/article/pii/S0005109812000283}.
+
+\bibitem{comparison_model-based_data-driven}
+Formentin S, Heusden K, Karimi A.
+\newblock A comparison of model-based and data-driven controller tuning.
+\newblock International Journal of Adaptive Control and Signal Processing. 2014
+  10;28.
+
+\bibitem{MATLAB}
+MATLAB.
+\newblock 9.7.0.1261785 (R2019b) Update 3.
+\newblock Natick, Massachusetts: The MathWorks Inc.; 2019.
+
+\bibitem{iniconfig}
+Pr E.
+\newblock INI Config (MATLAB Central File Exchange).
+\newblock Retrieved 13 July 2020.
+\newblock Available from:
+  \url{https://www.mathworks.com/matlabcentral/fileexchange/24992-ini-config)}.
+
+\bibitem{MPT3}
+Herceg M, Kvasnica M, Jones CN, Morari M.
+\newblock {Multi-Parametric Toolbox 3.0}.
+\newblock In: Proc.~of the European Control Conference. Z\"urich, Switzerland;
+  2013. p. 502--510.
+\newblock Available from: \url{http://control.ee.ethz.ch/~mpt}.
+
+\end{thebibliography}

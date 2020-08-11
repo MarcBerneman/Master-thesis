@@ -1,0 +1,6 @@
+applied on (a system) -> applied to (a system)
+windowsize -> window size
+Untill -> Till
+End captions with a period
+
+Make sure that the references are still correct in summary

@@ -1,0 +1,121 @@
+\section{Literature review}
+
+\subsection{Neural, fuzzy, and approximation-based control \cite{neural_fuzzy_approx-based_control}}
+
+This chapter begins by explaining that many arguments used by proponents of neural networks in control applications are flawed. For example, it is true that neural networks are universal approximators, ie. they can approximate any function (under certain conditions) arbitrarily well. But this is only the case if the number of nodes is large enough. Moreover, neural networks aren't the only universal approximators.
+
+Later, the authors explain the idea of local approximators and local influence functions. Local approximators approximate a function arbitrarily well in a local neighbourhood. Local influence functions are functions that have a local support, meaning that they are zero outside of a certain neighbourhood. Combining these 2 concepts gives an approximator that can approximate a function arbitrarily well anywhere. Moreover, thanks to the local supports, the training will not influence the local approximators that are too far removed from the current operating point.
+
+Fuzzy systems are an example of this principle, as rules are set up for different operating points. Finally, it is simpler to approximate functions locally, using polynomials for example. This is kind of similar to how the Local Polynomial Method (LPM) is used in system identification.
+
+
+\subsection{Data-driven model control with guaranteed stability \cite{Data-driven_model_reference_control}}
+It is possible to find a controller for a system without modeling it beforehand. Thus, the controller is found directly from data. The initial problem with this approach is that you cannot guarantee that the optimal controller will be stable. The authors of this paper propose a workaround to this.
+
+The proposed cost function is
+\begin{equation*}
+    J_{mr}(\rho) = \Big|\Big|M-\frac{K(\rho)G}{1+K(\rho)G}\Big|\Big|_2^2
+\end{equation*}
+which is relaxed to the convex cost function
+\begin{equation*}
+    J(\rho) = \Big|\Big|(1-M)[M-K(\rho)(1-M)G]\Big|\Big|_2^2
+\end{equation*}
+Using the small-gain theorem, the authors show that a sufficient condition for stability is
+\begin{equation*}
+\Big|\Big|M-K(\rho)(1-M)G\Big|\Big|_\infty < 1
+\end{equation*}
+The following quantity is very useful
+\begin{equation*}
+    \epsilon(t,\rho) = M r(t) - K(\rho) (1-M) y(t) = [M-K(\rho)(1-M)G]r(t) - K(\rho) (1-M) v(t)
+\end{equation*}
+For the ideal controller, this reduces to
+\begin{equation*}
+    \epsilon(t,\rho^*) = - K(\rho^*) (1-M) v(t)
+\end{equation*}
+This leads to the realization that the residual $\epsilon$ is not correlated with the reference $r$. And so the optimal controller is found by tuning $\rho$ sure that
+\begin{equation*}
+    \epsilon(t,\rho) = M r(t) - K(\rho) (1-M) y(t)
+\end{equation*}
+is not correlated with $r(t)$. Finally, the constraints 
+\begin{equation*}
+\Big|\Big|M-K(\rho)(1-M)G\Big|\Big|_\infty < 1
+\end{equation*}
+must still be imposed. This is done by finding a non-parametric estimate of $M-K(\rho)(1-M)G$ and constraining the frequency response to being smaller than 1 for all frequencies. This non-parametric estimate is found by observing that the first term of
+\begin{equation*}
+    \epsilon(t,\rho) = [M-K(\rho)(1-M)G]r(t) - K(\rho) (1-M) v(t)
+\end{equation*}
+is exactly what we need. So, for the case where one works with an arbitrary input, the constraints can be rewritten as
+
+\begin{equation*}
+    \Big|\frac{\sum_{m=1}^M E^{(m)}(k,\rho) \overline{R^{(m)}(k)}}{\sum_{m=1}^M R^{(m)}(k) \overline{R^{(m)}(k)}}\Big| < 1 \quad \forall k = 1,\ldots,\lfloor (T-1)/2\rfloor
+\end{equation*}
+with $E$ and $R$ being the DFT of $\epsilon$ and $r$ respectively, $T$ being the samples per period, $M$ being the number of periods measured and the superscript $(m)$ denoting the m-th measurements. \textbf{This step essentially contains the modeling part of the entire algorithm. It is this modeling part that ensures stability.} This is however a conservative constraint.
+
+% \paragraph{Remarks}
+% \begin{itemize}
+%     \item The solution of the optimization depends on the PRBS signal. Even in the noiseless case. 
+%     \item I found that the effectiveness of the algorithm depends heavily on the generated PRBS signal (in the paper they use 1 reference with different noise realisations).
+%     \item I found references for which it doesn't work well, and references for which it works as well or better than the results in the paper.
+%     \item So either my convex optimizer (MPT3) is doing weird things, or the authors cherry picked a good reference.
+%     \item With a MS, the results are much better.
+% \end{itemize}
+% I think that one problem, is that they pretend that the input signal is stochastic. But you actually know what the input signal is, so it is deterministic. The input signal is filtered before being used for the correlation criterion.
+% \begin{equation}
+%     r_W(t) = \frac{1-M}{\Phi_r} r(t)
+% \end{equation}
+% The denominator essentially tries to equalize the input signal. This might be the reason why a MS works better. Because the equalization is already perfect in a MS. 
+
+% This also explains why I had succes with certain PRBS signals. I chose them, by taken the one where $\Phi_r$ had the lowest deviation to 1.
+
+\subsection{Neural network control with guaranteed stability \cite{modified_SGD_for_neural_network_control}\cite{stability_condition_for_uncertain_systems}}
+These 2 papers are quite interesting. 
+\paragraph{General idea}
+In \cite{modified_SGD_for_neural_network_control}, the authors consider a nonlinear system where the state is the output
+\begin{equation*}
+    x(k+1) = G(x(k),u(k))
+\end{equation*}
+Linearization around the equilibrium point gives 
+\begin{equation*}
+    x(k+1) = A x(k) + B u(k) + O(\begin{bmatrix} x(k)^T & u(k)^T \end{bmatrix}^T)
+\end{equation*}
+The neural network controller has one hidden layer.
+\begin{equation*}
+    u(k) = W_2 F (W_1 x(k))
+\end{equation*}
+This can be seen as a \textbf{nonlinear state feedback controller}. The results of the paper do not apply to all activation functions, but the $\tanh$ function does satisfy the conditions. 
+
+By finding a discrete Lyapunov function
+\begin{equation*}
+    V(x) = x^T P x
+\end{equation*}
+for the system, the authors find a sufficient stability condition
+\begin{equation*}
+    C(W_1,W_2) = 0
+\end{equation*}
+They use this stability condition to modify the standard gradient-descent algorithm such that the weight matrices satisfy the stability conditions.
+
+Of course, the stability is not global and the size of the stability region depends on the severity of the non-linearity $O(\begin{bmatrix} x(k)^T & u(k)^T \end{bmatrix}^T)$.
+
+\paragraph{Uncertain systems}
+In \cite{stability_condition_for_uncertain_systems}, the authors extend this idea to linear systems, where the parameters in the A matrix are uncertain
+\begin{equation*}
+    \Dot{x} = [A_0 + \alpha_l A_l]x + B_0 u
+\end{equation*}
+The same tactic of using Lyapunov theory is used to find a stability condition and the algorithm from \cite{modified_SGD_for_neural_network_control} is used to optimize the neural network controller.
+
+\paragraph{Limitations} These papers have a few limitations:
+\begin{itemize}
+    \item What if the output is not the same as the system $y(k) = C x(k) + D u(k)$?
+    \item The neural network controller is still a static function, albeit a nonlinear one. Maybe recurrent neural networks can be used to create dynamic controllers. And it might be possible to create some stability condition for that.
+\end{itemize}
+
+\paragraph{Additional idea} Residual neural networks are very popular nowadays. The main idea is that skip connections are used so some of the original signal can be kept while processing it. This concept of adjusting the incoming signal with an additive residual component instead of transforming it gave me the following idea: instead of creating a controller from scratch, a system will first be controlled by conventional linear methods for which some stability can be proven. For example
+\begin{equation*}
+    u_0(k) = K x(k)
+\end{equation*}
+Let's say that the closed loop system can be made robust to some bounded process noise. Then, adding a neural network on top of this results in
+\begin{equation*}
+    u(k) = K x(k) + \text{NN}(x(k))
+\end{equation*}
+Now this neural network does not have to invent a controller from scratch. It is just tasked with improving the performance of the closed loop system. This extra input can be seen as some (controlled) process noise. As long as the output of this neural network does not exceed the robustness of the original closed loop system, it should be stable.
+
