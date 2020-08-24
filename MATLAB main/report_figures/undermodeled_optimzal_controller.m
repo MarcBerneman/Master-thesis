@@ -46,6 +46,16 @@ title("Magnitude (dB)")
 plot_options(gca)
 print(gcf,"figures/undermodeled_optimal","-depsc")
 
+set(gcf,'Units','Normalized','Position',[0.1,0.1,0.8,0.7])
+grid off
+title("")
+legend off
+xlabel("")
+set(gca, 'XTick', []);
+set(gca, 'YTick', []);
+set(gca,'XColor','w','YColor','w')
+print(gcf,"figures/presentation_title_page","-djpeg")
+
 
 function plot_options(gca)
     set(gca,'Linewidth',4)
