@@ -74,6 +74,15 @@ title("|G|_{dB}")
 legend("Actual","Estimated")
 print(gcf,'figures/MS_G','-depsc')
 
+grid off
+legend off
+xticks([])
+yticks([])
+xlabel("")
+set(gca,'XColor','w','YColor','w')
+title("")
+print(gcf,'figures/presentation_freq_dom_title','-dpng')
+
 function plot_options(gca)
     set(gca,'Linewidth',2)
     set(gca,'Fontsize',12)
