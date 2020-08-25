@@ -5,9 +5,9 @@ close all
 % file = "data/K_robust_input_P=10_M=100_RMS=100mV";
 % file = "data/CL_robust_input_P=20_M=20_RMS=100mV_at_G_in_CL";
 
-file = "data/K_robust_input_P=2_M=20_RMS=100mV_at_K";
+% file = "data/K_robust_input_P=2_M=20_RMS=100mV_at_K";
 % file = "data/CL_robust_input_P=2_M=20_RMS=100mV_at_G_in_CL";
-% file = "data/G_robust_input_P=2_M=20_RMS=100mV";
+file = "data/G_robust_input_P=2_M=20_RMS=100mV";
 
 load(file)
 % file = "data/K_robust_input_P=2_M=20_RMS=100mV_at_K";
@@ -83,6 +83,47 @@ elseif strcmp(file,"data/CL_robust_input_P=2_M=20_RMS=100mV_at_G_in_CL")
     print(gcf,'robust_method_CL.eps','-depsc')
 end
 
+if strcmp(file,"data/G_robust_input_P=2_M=20_RMS=100mV") %presentation figure
+    figure
+    plot(fexc,db(GBLA),'b-','Linewidth',4,'Displayname','|G_{BLA}|^2') %20 log(|G|) = 10 log(|G|^2)
+    grid on
+    title("|G_{BLA}|^2")
+    xlim([0 fmax])
+    ylabel("dB")
+    xlabel('f (kHz)')
+    xticklabels(xticks/1000)
+    plot_options(gca)
+    print(gcf,'presentation_robust_method_G','-dpng','-r300')
+elseif strcmp(file,"data/K_robust_input_P=2_M=20_RMS=100mV_at_K")
+    figure
+    hold on
+    plot(fexc,db(Kk),'m:','Linewidth',3,'Displayname','Optimal')
+    plot(fexc,db(GBLA),'k-','Linewidth',3,'Displayname','Measured') %20 log(|G|) = 10 log(|G|^2)
+    grid on
+    title("|K|^2")
+    xlim([0 fmax])
+    ylabel("dB")
+    xlabel('f (Hz)')
+%     xticklabels(xticks/1000)
+    plot_options(gca)
+    set(gca,'xscale','log')
+    legend('Location','North','fontsize',12)
+    print(gcf,'presentation_robust_method_K','-dpng','-r300')
+elseif strcmp(file,"data/CL_robust_input_P=2_M=20_RMS=100mV_at_G_in_CL")
+    figure
+    hold on
+    plot(fexc,db(CLk),'m:','Linewidth',3,'Displayname','Optimal')
+    plot(fexc,db(GBLA),'k-','Linewidth',3,'Displayname','Measured') %20 log(|G|) = 10 log(|G|^2)
+    grid on
+    title("|CL|^2")
+    xlim([0 fmax])
+    ylabel("dB")
+    xlabel('f (kHz)')
+    xticklabels(xticks/1000)
+    plot_options(gca)
+    legend('Location','Northeast','fontsize',12)
+    print(gcf,'presentation_robust_method_CL','-dpng','-r300')
+end
 
 %%
 figure

@@ -49,6 +49,13 @@ title("|U|")
 plot_options(gca)
 print(gcf,'figures/MS_u','-depsc')
 
+subplot(2,1,1)
+xlabel('Time index')
+ylabel('Arbitrary unit')
+subplot(2,1,2)
+ylabel('Arbitrary unit')
+print(gcf,'figures/presentation_MS_u','-dpng','-r300')
+
 figure
 subplot(2,1,1)
 plot(n,y,'-','Linewidth',2)
@@ -63,6 +70,30 @@ plot_options(gca)
 ylim([-40,20])
 xlim([min(f(1:N/2)),max(f(1:N/2))]/Fs)
 print(gcf,'figures/MS_y','-depsc')
+
+subplot(2,1,1)
+xlabel('Time index')
+ylabel('Arbitrary unit')
+subplot(2,1,2)
+ylabel('Arbitrary unit')
+print(gcf,'figures/presentation_MS_y','-dpng','-r300')
+
+
+figure
+subplot(2,1,1)
+plot(f(1:N/2)/Fs,db(Y(1:N/2)),'.','Color',[0 0.4470 0.7410],'Markersize',15,'Linewidth',2)
+title("|Y|_{dB}")
+ylabel('Arbitrary unit')
+plot_options(gca)
+ylim([-40,20])
+xlim([min(f(1:N/2)),max(f(1:N/2))]/Fs)
+subplot(2,1,2)
+stem(f(1:N/2)/Fs,abs(U(1:N/2)),'Linewidth',2)
+xlabel('Normalized frequency')
+title("|U|")
+ylabel('Arbitrary unit')
+plot_options(gca)
+print(gcf,'figures/presentation_MS_YU','-dpng','-r300')
 
 figure
 hold on
@@ -81,7 +112,7 @@ yticks([])
 xlabel("")
 set(gca,'XColor','w','YColor','w')
 title("")
-print(gcf,'figures/presentation_freq_dom_title','-dpng')
+print(gcf,'figures/presentation_freq_dom_title','-dpng','-r300')
 
 function plot_options(gca)
     set(gca,'Linewidth',2)

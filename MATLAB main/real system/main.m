@@ -68,9 +68,18 @@ xlabel('f (kHz)')
 ylabel('Magnitude (dB)')
 plot_options(gca)
 legend('Location','Best','Interpreter','Latex','fontsize',14)
-% set(gca,'xscale','log')
-
 print("real_system_nonparametric_closed_loop",'-depsc')
+
+figure
+hold on
+% plot(f/1000,db(GBLA),'b-','linewidth',3,'Displayname',"$\mathbf{G_{\mathbf{\mathrm{BLA}}}}$")
+plot(f/1000,db(Mk),'r--','linewidth',3,'Displayname',"$\mathbf{M}$")
+plot(f/1000,db(CLk),'g-.','linewidth',3,'Displayname',"$\mathbf{CL}$")
+xlabel('f (kHz)')
+ylabel('Magnitude (dB)')
+plot_options(gca)
+legend('Location','Best','Interpreter','Latex','fontsize',14)
+print("presentation_real_system_nonparametric_closed_loop",'-dpng','-r300')
 
 %%
 figure

@@ -65,7 +65,23 @@ legend('Location','Best','fontsize',14)
 xlim([0 fmax])
 ylabel("dB")
 plot_options(gca)
+xlabel("f (kHz)")
+xticklabels(xticks/1000)
 print(gcf,'K_from_G_CL.eps','-depsc')
+
+figure %presentation
+hold on
+plot(fexc,db(Kk),'m:','Linewidth',4,'Displayname','Optimal')
+plot(fexc,db(K_from_G_and_CL),'k-','Linewidth',4,'Displayname','Indirect')
+grid on
+title("|K|^2")
+legend('Location','Best','fontsize',14)
+xlim([0 fmax])
+ylabel("dB")
+plot_options(gca)
+xlabel("f (kHz)")
+xticklabels(xticks/1000)
+print(gcf,'K_from_G_CL','-dpng','-r300')
 
 
 function plot_options(gca)
